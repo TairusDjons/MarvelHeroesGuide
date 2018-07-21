@@ -12,26 +12,32 @@ import SwiftyJSON
 
 class CharacterService: MarvelBaseService, CharacterServiceProtocol {
     func getCharacters( name: String? = nil,
-                        offset: Int? = 20,
-                        limit: Int? = 100,
+                        offset: Int? = 0,
+                        limit: Int? = 20,
                         OnCompletion: @escaping (Result<[Character],Error>)->()) {
-        let params: [String: Any] = [
-            "nameStartWith": name!,
+        var params: [String: Any] = [
             "limit": limit!,
             "offset": offset!
         ]
-        makeRequest(url: API.characters, method: .get, parameters: params, responseType: .Json) {
+        
+        if let name = name {
+            params["name"] = name
+        }
+        
+        
+        makeRequest(url: API.characters, method: .get, parameters: params, encoding: URLEncoding.default, responseType: .Json) {
             result in
             switch result {
-            case .success(let result):
-                let json = JSON(result)
-                var charachters = [Character]()
+            case .success(let value):
+                let json = JSON(value)
+                var characters = [Character]()
+                let js = json["message"].stringValue
                 for(_, subJson) in json["data"]["results"] {
                     guard let char = Character(json: subJson)
                         else {continue}
-                    charachters.append(char)
+                    characters.append(char)
                 }
-                OnCompletion(.success(charachters))
+                OnCompletion(.success(characters))
             case .error(let error):
                 OnCompletion(.error(error))
             }
