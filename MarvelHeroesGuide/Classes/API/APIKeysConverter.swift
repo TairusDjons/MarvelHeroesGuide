@@ -16,13 +16,13 @@ struct Keys {
 
 
 public class APIKeysConverter {
-    static func getHash() -> String {
-        let ts = NSDate.timeIntervalSinceReferenceDate.description
+    static func getHash(timeStamp: String) -> String {
+        let ts = timeStamp
         let keys = getKeys()
         guard let publicKey = keys.PublicKey,
               let privateKey = keys.PrivateKey
         else { return "" }
-        let hash = "\(ts)\(privateKey)\(publicKey)".md5()
+        let hash = (ts + privateKey + publicKey).md5()
         return hash
     }
     
@@ -30,6 +30,6 @@ public class APIKeysConverter {
         guard let dict = Bundle.main.path(forResource: "APIkeys", ofType: "plist"),
               let data = NSDictionary(contentsOfFile: dict)
             else { return Keys(PublicKey: "", PrivateKey: "") }
-        return Keys(PublicKey: data["publicKey"] as? String, PrivateKey: data["privateKey"] as? String)
+        return Keys(PublicKey: data["PublicKey"] as? String, PrivateKey: data["PrivateKey"] as? String)
     }
 }
