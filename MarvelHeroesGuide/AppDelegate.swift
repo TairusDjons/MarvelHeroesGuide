@@ -17,7 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let navigationBarAp = UINavigationBar.appearance()
         navigationBarAp.tintColor = .white
+        navigationBarAp.barStyle = .black
         navigationBarAp.backgroundColor = Colors.marvelRed
+        navigationBarAp.isTranslucent = false
+        let rootController = HeroesCollectionViewController(nibName: "HeroesCollectionView", bundle: nil, characterService: CharacterService())
+        let navigation = UINavigationController(rootViewController: rootController)
+        
+        window?.rootViewController = navigation
+        
         return true
     }
 
