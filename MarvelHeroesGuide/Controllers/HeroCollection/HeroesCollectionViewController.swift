@@ -7,17 +7,17 @@
 //
 
 import UIKit
+import Kingfisher
 
 private let reuseIdentifier = "TagCell"
 
-class HeroesCollectionViewController: UICollectionViewController {
+class HeroesCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
 
-    var heroesList = [Character]()
-    var characterService: CharacterService
-    
-    
-    @IBOutlet weak var heroCollectionView: UICollectionView!
-    
+    private var heroesList = [Character]()
+    private var characterService: CharacterService
+    private var currentOffset: Int = 0
+    @IBOutlet fileprivate weak var heroCollectionView: UICollectionView!
+    @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
     
     init(nibName: String?,
          bundle: Bundle?,
@@ -25,26 +25,30 @@ class HeroesCollectionViewController: UICollectionViewController {
         self.characterService = characterService
         super.init(nibName: nibName, bundle: bundle)
     }
-    
+
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.characterService = CharacterService()
+        super.init(coder: aDecoder)
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Heroes"
         
-        let cellNib = UINib(nibName: "TagCell", bundle: nil)
-        self.collectionView?.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        let lineSpace = CGFloat(4)
-        let interitemSpace = CGFloat(4)
-        let insets = UIEdgeInsetsMake(20, 0, 10, 0)
-        let itemSize = UIScreen.main.bounds.width/3 - 4
+        let cellNib = UINib(nibName: "HeroCell", bundle: nil)
+        heroCollectionView?.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
+        heroCollectionView.dataSource = self
+        heroCollectionView.delegate = self
+        let lineSpace = CGFloat(6)
+        let interitemSpace = CGFloat(6)
+        let insets = UIEdgeInsetsMake(20, 3, 10, 3)
+        let itemSize = UIScreen.main.bounds.width/2 - 6
         setLayout(lineSpace: lineSpace,
                   interitemSpace: interitemSpace,
                   insets: insets,
                   itemSize: itemSize)
+        
+        getCharackters()
         
         
     }
@@ -68,36 +72,44 @@ class HeroesCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return heroesList.count
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? HeroCell
+        else { fatalError("No cell available") }
+
+        let name = heroesList[indexPath.row].name
+        let thumbnail = heroesList[indexPath.row].uriImage
+        cell.setOutlets(thumbnail: thumbnail, name: name)
         // Configure the cell
     
         return cell
     }
     
     func getCharackters(){
+        self.loadingIndicator.startAnimating()
         characterService.getCharacters() {
             result in
             switch result {
             case .success(let result):
                 self.heroesList = result
-            
+               
             case .error(let error):
                 print(error)
             }
+            self.heroCollectionView.reloadData()
+            self.loadingIndicator.stopAnimating()
         }
+        
     }
     
     func setLayout(lineSpace: CGFloat,
@@ -110,38 +122,9 @@ class HeroesCollectionViewController: UICollectionViewController {
         layout.minimumLineSpacing = lineSpace
         layout.minimumInteritemSpacing = interitemSpace
         
-        heroCollectionView.collectionViewLayout = layout
+        heroCollectionView.setCollectionViewLayout(layout, animated: true)
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
+  
 
 }
