@@ -10,13 +10,26 @@ import UIKit
 
 class HeroCell: UICollectionViewCell {
     
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet fileprivate weak var imageView: UIImageView!
+    @IBOutlet fileprivate weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
         self.backgroundColor = Colors.marvelRed
         self.nameLabel.textColor = .white
-        self.layer.cornerRadius = 8
+        self.imageView.layer.cornerRadius = 16
+        self.imageView.layer.masksToBounds = true
+        self.layer.cornerRadius = 16
     }
     
+    func setOutlets(thumbnail: Thumbnail, name: String, placeholder: UIImage? = nil) {
+        self.nameLabel.text = name
+        let path = URL(string: thumbnail.path + "." + thumbnail.exten)
+        guard let placeholder = placeholder
+            else {
+                self.imageView.kf.setImage(with: path)
+                return
+        }
+        self.imageView.kf.setImage(with: path, placeholder: placeholder)
+    }
 }
+
