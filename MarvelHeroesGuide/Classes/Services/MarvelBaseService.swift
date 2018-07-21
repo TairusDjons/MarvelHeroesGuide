@@ -19,9 +19,11 @@ class MarvelBaseService: Requastable {
                      OnCompleted: ((Result<Any, Error>)->())? = {_ in }) {
         guard var params = parameters
             else {return}
-        params["ts"] = Date.timeIntervalSinceReferenceDate.description
-        params["apikey"] = APIKeysConverter.getKeys().PublicKey
-        params["hash"] = APIKeysConverter.getHash()
+        let ts = NSDate().timeIntervalSince1970.description
+        let keys = APIKeysConverter.getKeys()
+        params["ts"] = ts
+        params["apikey"] = keys.PublicKey
+        params["hash"] = APIKeysConverter.getHash(timeStamp: ts)
         
         switch responseType {
         case .Json:
