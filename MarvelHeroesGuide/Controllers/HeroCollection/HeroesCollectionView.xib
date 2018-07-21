@@ -6,31 +6,47 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
-        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewController id="iAO-w0-jo3" customClass="HeroesCollectionViewController" customModule="MarvelHeroesGuide" customModuleProvider="target">
-            <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" id="xxE-79-DWB">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="elh-1j-5ER">
-                    <size key="itemSize" width="150" height="150"/>
-                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                </collectionViewFlowLayout>
-                <connections>
-                    <outlet property="dataSource" destination="iAO-w0-jo3" id="cof-bb-riR"/>
-                    <outlet property="delegate" destination="iAO-w0-jo3" id="U69-Mm-joC"/>
-                </connections>
-            </collectionView>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroesCollectionViewController" customModule="MarvelHeroesGuide" customModuleProvider="target">
             <connections>
-                <outlet property="heroCollectionView" destination="xxE-79-DWB" id="yCr-OA-1x8"/>
+                <outlet property="heroCollectionView" destination="Jir-v3-KXn" id="tJc-5M-zHe"/>
+                <outlet property="loadingIndicator" destination="YsX-oH-BO7" id="VTX-Si-KL0"/>
+                <outlet property="view" destination="ZCC-HH-h6Q" id="fMg-ao-m3i"/>
             </connections>
-            <point key="canvasLocation" x="-45" y="-18"/>
-        </collectionViewController>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ZCC-HH-h6Q">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jir-v3-KXn">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Diu-kl-hHY">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="YsX-oH-BO7">
+                    <rect key="frame" x="177" y="333.5" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="YsX-oH-BO7" firstAttribute="centerX" secondItem="Jir-v3-KXn" secondAttribute="centerX" id="3dJ-X2-Yi1"/>
+                <constraint firstItem="lXK-tE-7Kr" firstAttribute="bottom" secondItem="Jir-v3-KXn" secondAttribute="bottom" id="WNy-kz-kYM"/>
+                <constraint firstItem="Jir-v3-KXn" firstAttribute="leading" secondItem="lXK-tE-7Kr" secondAttribute="leading" id="ZH7-sY-Nh1"/>
+                <constraint firstItem="lXK-tE-7Kr" firstAttribute="trailing" secondItem="Jir-v3-KXn" secondAttribute="trailing" id="at4-nS-Scq"/>
+                <constraint firstItem="Jir-v3-KXn" firstAttribute="top" secondItem="lXK-tE-7Kr" secondAttribute="top" id="mt5-tM-q2S"/>
+                <constraint firstItem="YsX-oH-BO7" firstAttribute="centerY" secondItem="Jir-v3-KXn" secondAttribute="centerY" id="wiO-ZO-LAL"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="lXK-tE-7Kr"/>
+            <point key="canvasLocation" x="-64" y="-53"/>
+        </view>
     </objects>
 </document>
