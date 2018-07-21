@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="327" id="OkU-iK-WHf">
+            <rect key="frame" x="0.0" y="0.0" width="451" height="327"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OkU-iK-WHf" id="wju-Tr-GoM">
+                <rect key="frame" x="0.0" y="0.0" width="451" height="326.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6y0-ey-klb">
+                        <rect key="frame" x="20" y="11" width="411" height="29"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yqX-Ql-OC9">
+                        <rect key="frame" x="20" y="48" width="411" height="268"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6y0-ey-klb" firstAttribute="leading" secondItem="wju-Tr-GoM" secondAttribute="leadingMargin" id="HZ5-IV-9fd"/>
+                    <constraint firstItem="yqX-Ql-OC9" firstAttribute="leading" secondItem="wju-Tr-GoM" secondAttribute="leadingMargin" id="JUe-gs-aC7"/>
+                    <constraint firstItem="yqX-Ql-OC9" firstAttribute="trailing" secondItem="wju-Tr-GoM" secondAttribute="trailingMargin" id="Rqs-CQ-2pL"/>
+                    <constraint firstItem="6y0-ey-klb" firstAttribute="trailing" secondItem="wju-Tr-GoM" secondAttribute="trailingMargin" id="UtP-B0-POV"/>
+                    <constraint firstItem="yqX-Ql-OC9" firstAttribute="top" secondItem="6y0-ey-klb" secondAttribute="bottom" constant="8" id="auN-B0-Kbn"/>
+                    <constraint firstItem="yqX-Ql-OC9" firstAttribute="bottom" secondItem="wju-Tr-GoM" secondAttribute="bottomMargin" id="bPf-Mk-6iw"/>
+                    <constraint firstItem="6y0-ey-klb" firstAttribute="top" secondItem="wju-Tr-GoM" secondAttribute="topMargin" id="zah-To-AjV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="1.5" y="32.5"/>
+        </tableViewCell>
+    </objects>
+</document>
