@@ -7,6 +7,7 @@ pod 'Alamofire'
 pod 'SwiftyJSON'
 pod 'Result'
 pod 'CryptoSwift'
+pod 'Kingfisher', '~> 4.0'
 
   # Pods for MarvelHeroesGuide
 
