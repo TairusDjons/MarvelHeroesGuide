@@ -11,11 +11,12 @@ import Kingfisher
 
 private let reuseIdentifier = "TagCell"
 
-class HeroesCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class HeroesCollectionViewController: UIViewController{
 
     private var heroesList = [Character]()
     private var characterService: CharacterService
     private var currentOffset: Int = 0
+    private var isLoading: Bool = false
     @IBOutlet fileprivate weak var heroCollectionView: UICollectionView!
     @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
     
@@ -34,6 +35,7 @@ class HeroesCollectionViewController: UIViewController, UICollectionViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Heroes"
+        heroCollectionView.backgroundColor = Colors.backgroundMarvelRed
         
         let cellNib = UINib(nibName: "HeroCell", bundle: nil)
         heroCollectionView?.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
@@ -47,67 +49,69 @@ class HeroesCollectionViewController: UIViewController, UICollectionViewDelegate
                   interitemSpace: interitemSpace,
                   insets: insets,
                   itemSize: itemSize)
-        
         getCharackters()
         
         
     }
-
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
+}
 
-    // MARK: UICollectionViewDataSource
 
+// MARK: UICollectionViewDataSource and UICollectionViewDelegate
+extension HeroesCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return heroesList.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? HeroCell
-        else { fatalError("No cell available") }
-
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? HeroCell
+            else { fatalError("No cell available") }
+        
         let name = heroesList[indexPath.row].name
         let thumbnail = heroesList[indexPath.row].uriImage
         cell.setOutlets(thumbnail: thumbnail, name: name)
         // Configure the cell
-    
+        
         return cell
     }
     
-    func getCharackters(){
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        self.currentOffset+=20
+        if (indexPath.item == heroesList.count-1 && !isLoading) {
+           
+            getCharackters(offset: currentOffset)
+        }
+    }
+    
+    func getCharackters(name: String? = nil,
+                        offset: Int? = 0,
+                        limit: Int? = 20){
         self.loadingIndicator.startAnimating()
-        characterService.getCharacters() {
+        isLoading = true
+        characterService.getCharacters(name: name, offset: offset, limit: limit) {
             result in
             switch result {
             case .success(let result):
-                self.heroesList = result
-               
+                self.heroesList.append(contentsOf: result)
             case .error(let error):
                 print(error)
             }
             self.heroCollectionView.reloadData()
             self.loadingIndicator.stopAnimating()
+            self.isLoading = false
         }
         
     }
@@ -124,7 +128,5 @@ class HeroesCollectionViewController: UIViewController, UICollectionViewDelegate
         
         heroCollectionView.setCollectionViewLayout(layout, animated: true)
     }
-
-  
 
 }
