@@ -14,11 +14,8 @@ extension Event {
         self.id = json["id"].intValue
         self.description = json["description"].stringValue
         self.thumbnail = Thumbnail(json: json["thumbnail"])!
-        self.title = json["title"].stringValue
-        var tempChars = [Character]()
-        for (_, subJson) in json["charachters"] {
-            tempChars.append(Character(json: subJson)!)
-        }
-        self.charachters = tempChars
+        self.name = json["title"].stringValue
+        self.resourceURI = json["resourceURI"].stringValue
+        self.characters = CollectionModel(json: json["characters"])!
     }
 }
