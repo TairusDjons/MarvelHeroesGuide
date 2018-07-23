@@ -9,11 +9,20 @@
 import Foundation
 import SwiftyJSON
 
-struct Character {
+struct Character: ResourceItem, Hashable{
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        return lhs.id == rhs.id
+    }
+
     let id: Int
     let name: String
     let description: String
     let uriImage: Thumbnail
-    let events: [Event]
+    let resourceURI: String
+    let events: CollectionModel
+    let urls: [UrlType]
+    var hashValue: Int {
+        return id.hashValue
+    }
 }
 
