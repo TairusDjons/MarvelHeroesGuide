@@ -9,26 +9,34 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRON_MAN_OF_WAR_2_NCV.ttf">
+            <string>IRONMANOFWAR2NCV</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="327" id="OkU-iK-WHf">
-            <rect key="frame" x="0.0" y="0.0" width="451" height="327"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="250" id="OkU-iK-WHf" customClass="DetailCell" customModule="MarvelHeroesGuide" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="451" height="250"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OkU-iK-WHf" id="wju-Tr-GoM">
-                <rect key="frame" x="0.0" y="0.0" width="451" height="326.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="451" height="249.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero Details" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6y0-ey-klb">
-                        <rect key="frame" x="20" y="11" width="411" height="29"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="20" y="11" width="411" height="28"/>
+                        <fontDescription key="fontDescription" name="IRONMANOFWAR2NCV" family="IRON MAN OF WAR 2 NCV" pointSize="28"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yqX-Ql-OC9">
-                        <rect key="frame" x="20" y="48" width="411" height="268"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yqX-Ql-OC9">
+                        <rect key="frame" x="20" y="47" width="411" height="192"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="145" id="HUW-a3-0xA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="IRONMANOFWAR2NCV" family="IRON MAN OF WAR 2 NCV" pointSize="22"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
@@ -42,7 +50,10 @@
                     <constraint firstItem="6y0-ey-klb" firstAttribute="top" secondItem="wju-Tr-GoM" secondAttribute="topMargin" id="zah-To-AjV"/>
                 </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="1.5" y="32.5"/>
+            <connections>
+                <outlet property="detailTextView" destination="yqX-Ql-OC9" id="lzf-PO-GJW"/>
+            </connections>
+            <point key="canvasLocation" x="1.5" y="-6"/>
         </tableViewCell>
     </objects>
 </document>
