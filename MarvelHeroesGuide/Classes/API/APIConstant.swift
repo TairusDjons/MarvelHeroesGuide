@@ -11,7 +11,9 @@ import Foundation
 public class API {
     
     // Base Url
-    static let base = "https://gateway.marvel.com/v1/public/"
+    static let base = "https://gateway.marvel.com/v1/public"
     
-    static let characters = "https://gateway.marvel.com/v1/public/characters"
+    static let characters = "/characters"
+    
+    static let events = "/events"
 }
