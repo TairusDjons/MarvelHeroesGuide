@@ -13,23 +13,32 @@ private let reuseIdentifier = "TagCell"
 
 class HeroesCollectionViewController: UIViewController{
 
-    private var heroesList = [Character]()
-    private var characterService: CharacterService
+    private var heroesList: [Character] {
+        didSet {
+            if heroesList.isEmpty {
+                alertMessage(view: self, title: "Heores on duty", usrMessage: "No more heroes is found")
+            }
+        }
+    }
+    private var characterService: CharacterServiceProtocol
     private var currentOffset: Int = 0
+    private var totalChars: Int = 1500
     private var isLoading: Bool = false
     @IBOutlet fileprivate weak var heroCollectionView: UICollectionView!
     @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
     
     init(nibName: String?,
          bundle: Bundle?,
-         characterService: CharacterService) {
+         characterService: CharacterServiceProtocol) {
         self.characterService = characterService
+        self.heroesList = [Character]()
         super.init(nibName: nibName, bundle: bundle)
     }
 
     
     required init?(coder aDecoder: NSCoder) {
         self.characterService = CharacterService()
+        self.heroesList = [Character]()
         super.init(coder: aDecoder)
     }
     override func viewDidLoad() {
@@ -43,13 +52,15 @@ class HeroesCollectionViewController: UIViewController{
         heroCollectionView.delegate = self
         let lineSpace = CGFloat(6)
         let interitemSpace = CGFloat(6)
-        let insets = UIEdgeInsetsMake(20, 3, 10, 3)
+        let insets = UIEdgeInsetsMake(20, 0, 10, 0)
         let itemSize = UIScreen.main.bounds.width/2 - 6
+        
+        
         setLayout(lineSpace: lineSpace,
                   interitemSpace: interitemSpace,
                   insets: insets,
                   itemSize: itemSize)
-        getCharackters()
+        getCharacters()
         
         
     }
@@ -57,6 +68,14 @@ class HeroesCollectionViewController: UIViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func pushToDescription(hero: Character) {
+        let controller = HeroDescriptionController(nibName: "HeroDescription",
+                                                   bundle: nil,
+                                                   characterService: characterService,
+                                                   character: hero)
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 
 
@@ -89,23 +108,27 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        self.currentOffset+=20
-        if (indexPath.item == heroesList.count-1 && !isLoading) {
-           
-            getCharackters(offset: currentOffset)
+        
+        if (indexPath.item == heroesList.count-1 && currentOffset < totalChars && !isLoading) {
+            getCharacters(offset: currentOffset + 20)
         }
     }
     
-    func getCharackters(name: String? = nil,
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pushToDescription(hero: heroesList[indexPath.row])
+    }
+    
+    func getCharacters(name: String? = nil,
                         offset: Int? = 0,
                         limit: Int? = 20){
         self.loadingIndicator.startAnimating()
         isLoading = true
-        characterService.getCharacters(name: name, offset: offset, limit: limit) {
+        characterService.getCharacters(uri: nil, name: name, offset: offset, limit: limit) {
             result in
             switch result {
             case .success(let result):
                 self.heroesList.append(contentsOf: result)
+                self.currentOffset += offset!
             case .error(let error):
                 print(error)
             }
@@ -125,7 +148,6 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
         layout.itemSize = CGSize(width: itemSize, height: itemSize)
         layout.minimumLineSpacing = lineSpace
         layout.minimumInteritemSpacing = interitemSpace
-        
         heroCollectionView.setCollectionViewLayout(layout, animated: true)
     }
 
