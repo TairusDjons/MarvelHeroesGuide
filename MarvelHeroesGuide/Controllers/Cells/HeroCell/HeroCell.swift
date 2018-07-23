@@ -14,11 +14,14 @@ class HeroCell: UICollectionViewCell {
     @IBOutlet fileprivate weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
-        self.backgroundColor = Colors.marvelRed
         self.nameLabel.textColor = .white
+        self.nameLabel.layer.cornerRadius = 16
+        self.nameLabel.backgroundColor = Colors.marvelRed
+        
         self.imageView.layer.cornerRadius = 16
         self.imageView.layer.masksToBounds = true
         self.layer.cornerRadius = 16
+        
     }
     
     func setOutlets(thumbnail: Thumbnail, name: String, placeholder: UIImage? = nil) {
