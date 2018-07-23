@@ -7,10 +7,11 @@
 //
 
 import Foundation
-struct Event {
+struct Event: ResourceItem {
+    let name: String
     let id: Int
-    let title: String
     let description: String
     let thumbnail: Thumbnail
-    let charachters: [Character]
+    let resourceURI: String
+    let characters: CollectionModel
 }
