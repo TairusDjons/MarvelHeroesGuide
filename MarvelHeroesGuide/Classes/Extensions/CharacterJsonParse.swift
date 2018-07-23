@@ -15,11 +15,13 @@ extension Character {
         self.name = json["name"].stringValue
         self.description = json["description"].stringValue
         self.uriImage = Thumbnail(json: json["thumbnail"])!
-        var tempEvents = [Event]()
-        for (_, subJson) in json["events"] {
-            tempEvents.append(Event(json: subJson)!)
+        self.resourceURI = json["resourceURI"].stringValue
+        self.events = CollectionModel(json: json["events"])!
+        var tempUrls = [UrlType]()
+        for (_, subJson) in json["urls"] {
+            tempUrls.append(UrlType(json: subJson)!)
         }
-        self.events = tempEvents
+        self.urls = tempUrls
     }
 }
 
