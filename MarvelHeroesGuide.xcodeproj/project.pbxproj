@@ -22,7 +22,6 @@
 		B127AF3F2103DE9000A86230 /* HeroThumbnailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B127AF3E2103DE9000A86230 /* HeroThumbnailCell.xib */; };
 		B127AF412103DEB700A86230 /* ConnectedHeroesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B127AF402103DEB700A86230 /* ConnectedHeroesCell.xib */; };
 		B127AF452103E5C400A86230 /* HeroDescriptionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B127AF442103E5C400A86230 /* HeroDescriptionController.swift */; };
-		B12AA80C2104C280003335E8 /* BaseDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AA80B2104C280003335E8 /* BaseDataStruct.swift */; };
 		B12AA80E2104C964003335E8 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AA80D2104C964003335E8 /* DetailCell.swift */; };
 		B12AA8102104CB42003335E8 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AA80F2104CB42003335E8 /* ThumbnailCell.swift */; };
 		B12AA8122104CCEC003335E8 /* ConnectedHeroesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AA8112104CCEC003335E8 /* ConnectedHeroesCell.swift */; };
@@ -33,7 +32,6 @@
 		B12AA81D210535EB003335E8 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AA81C210535EB003335E8 /* item.swift */; };
 		B12AA81F21053B73003335E8 /* ItemJsonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AA81E21053B73003335E8 /* ItemJsonParse.swift */; };
 		B12DFBEF2109254000BEA68C /* MarvelBaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFBEE2109254000BEA68C /* MarvelBaseObject.swift */; };
-		B12DFBF1210926B000BEA68C /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFBF0210926B000BEA68C /* BaseObject.swift */; };
 		B12DFBF321092A7800BEA68C /* jsonParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFBF221092A7800BEA68C /* jsonParsable.swift */; };
 		B12DFBF621092BA000BEA68C /* TableObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12DFBF521092BA000BEA68C /* TableObjectView.xib */; };
 		B12DFBF921092D3800BEA68C /* ObjectTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12DFBF821092D3800BEA68C /* ObjectTableCell.xib */; };
@@ -44,7 +42,6 @@
 		B144F00B210658C8001E6DE8 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F00A210658C8001E6DE8 /* Alertable.swift */; };
 		B144F00D2106595E001E6DE8 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F00C2106595E001E6DE8 /* AlertViewController.swift */; };
 		B144F00F21065D13001E6DE8 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F00E21065D13001E6DE8 /* ErrorHandler.swift */; };
-		B144F01121065D5C001E6DE8 /* APIErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F01021065D5C001E6DE8 /* APIErrorHandler.swift */; };
 		B144F01321067DCE001E6DE8 /* WikiButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F01221067DCE001E6DE8 /* WikiButtonCell.swift */; };
 		B144F01521067DE0001E6DE8 /* WikiButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B144F01421067DE0001E6DE8 /* WikiButtonCell.xib */; };
 		B144F018210680B8001E6DE8 /* WikiWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B144F017210680B8001E6DE8 /* WikiWebView.xib */; };
@@ -108,7 +105,6 @@
 		B127AF3E2103DE9000A86230 /* HeroThumbnailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroThumbnailCell.xib; sourceTree = "<group>"; };
 		B127AF402103DEB700A86230 /* ConnectedHeroesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConnectedHeroesCell.xib; sourceTree = "<group>"; };
 		B127AF442103E5C400A86230 /* HeroDescriptionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDescriptionController.swift; sourceTree = "<group>"; };
-		B12AA80B2104C280003335E8 /* BaseDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataStruct.swift; sourceTree = "<group>"; };
 		B12AA80D2104C964003335E8 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		B12AA80F2104CB42003335E8 /* ThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
 		B12AA8112104CCEC003335E8 /* ConnectedHeroesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedHeroesCell.swift; sourceTree = "<group>"; };
@@ -119,7 +115,6 @@
 		B12AA81C210535EB003335E8 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		B12AA81E21053B73003335E8 /* ItemJsonParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemJsonParse.swift; sourceTree = "<group>"; };
 		B12DFBEE2109254000BEA68C /* MarvelBaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelBaseObject.swift; sourceTree = "<group>"; };
-		B12DFBF0210926B000BEA68C /* BaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
 		B12DFBF221092A7800BEA68C /* jsonParsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonParsable.swift; sourceTree = "<group>"; };
 		B12DFBF521092BA000BEA68C /* TableObjectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableObjectView.xib; sourceTree = "<group>"; };
 		B12DFBF821092D3800BEA68C /* ObjectTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectTableCell.xib; sourceTree = "<group>"; };
@@ -130,7 +125,6 @@
 		B144F00A210658C8001E6DE8 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		B144F00C2106595E001E6DE8 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		B144F00E21065D13001E6DE8 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		B144F01021065D5C001E6DE8 /* APIErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorHandler.swift; sourceTree = "<group>"; };
 		B144F01221067DCE001E6DE8 /* WikiButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiButtonCell.swift; sourceTree = "<group>"; };
 		B144F01421067DE0001E6DE8 /* WikiButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiButtonCell.xib; sourceTree = "<group>"; };
 		B144F017210680B8001E6DE8 /* WikiWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WikiWebView.xib; sourceTree = "<group>"; };
@@ -385,7 +379,6 @@
 				B144F00A210658C8001E6DE8 /* Alertable.swift */,
 				B144F00E21065D13001E6DE8 /* ErrorHandler.swift */,
 				B12DFBEE2109254000BEA68C /* MarvelBaseObject.swift */,
-				B12DFBF0210926B000BEA68C /* BaseObject.swift */,
 				B12DFBF221092A7800BEA68C /* jsonParsable.swift */,
 				B12DFC0321093FE000BEA68C /* FilterDelegate.swift */,
 			);
@@ -399,7 +392,6 @@
 				B149D9432101503D00A1CAC3 /* Character.swift */,
 				B149D9452101505B00A1CAC3 /* Event.swift */,
 				B11B061F210253F3003021ED /* Thumbnail.swift */,
-				B12AA80B2104C280003335E8 /* BaseDataStruct.swift */,
 				B12AA81C210535EB003335E8 /* item.swift */,
 				B144F01B2106832E001E6DE8 /* Url.swift */,
 			);
@@ -455,7 +447,6 @@
 			isa = PBXGroup;
 			children = (
 				B1249A042102948300928C87 /* Colors.swift */,
-				B144F01021065D5C001E6DE8 /* APIErrorHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -722,7 +713,6 @@
 				B11B0620210253F3003021ED /* Thumbnail.swift in Sources */,
 				B12AA8122104CCEC003335E8 /* ConnectedHeroesCell.swift in Sources */,
 				B12AA81D210535EB003335E8 /* item.swift in Sources */,
-				B12DFBF1210926B000BEA68C /* BaseObject.swift in Sources */,
 				B12DFBEF2109254000BEA68C /* MarvelBaseObject.swift in Sources */,
 				B149D93B21011EC100A1CAC3 /* APIKeysConverter.swift in Sources */,
 				B12AA8102104CB42003335E8 /* ThumbnailCell.swift in Sources */,
@@ -731,7 +721,6 @@
 				B12AA81F21053B73003335E8 /* ItemJsonParse.swift in Sources */,
 				B149D9422101437500A1CAC3 /* CharactersServiceProtocol.swift in Sources */,
 				B11B06222102541D003021ED /* CharacterJsonParse.swift in Sources */,
-				B144F01121065D5C001E6DE8 /* APIErrorHandler.swift in Sources */,
 				B12DFC022109397D00BEA68C /* FilterNameTableCell.swift in Sources */,
 				B149D90021010D7B00A1CAC3 /* ViewController.swift in Sources */,
 				B149D8FE21010D7B00A1CAC3 /* AppDelegate.swift in Sources */,
@@ -742,7 +731,6 @@
 				B11B0624210257D3003021ED /* EventJsonParse.swift in Sources */,
 				B1249A03210292B200928C87 /* ObjectCell.swift in Sources */,
 				B12DFBFF210938B200BEA68C /* FilterViewController.swift in Sources */,
-				B12AA80C2104C280003335E8 /* BaseDataStruct.swift in Sources */,
 				B12AA81B2105341C003335E8 /* CollectionModelParse.swift in Sources */,
 				B11B062A21025BF9003021ED /* CharactersService.swift in Sources */,
 				B12DFC0421093FE000BEA68C /* FilterDelegate.swift in Sources */,
