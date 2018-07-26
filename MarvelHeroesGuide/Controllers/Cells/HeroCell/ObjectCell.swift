@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeroCell: UICollectionViewCell {
+class ObjectCell: UICollectionViewCell {
     
     @IBOutlet fileprivate weak var imageView: UIImageView!
     @IBOutlet fileprivate weak var nameLabel: UILabel!
