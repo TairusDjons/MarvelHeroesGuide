@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="IRON_MAN_OF_WAR_2_NCV.ttf">
+            <string>IRONMANOFWAR2NCV</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ObjectTableCell" rowHeight="113" id="gVd-7l-9GI">
+            <rect key="frame" x="0.0" y="0.0" width="483" height="113"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gVd-7l-9GI" id="u4X-RB-j1s">
+                <rect key="frame" x="0.0" y="0.0" width="483" height="112.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iju-t8-C4v">
+                        <rect key="frame" x="334" y="0.0" width="149" height="113"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aa2-JX-sJQ">
+                        <rect key="frame" x="20" y="46" width="294" height="21"/>
+                        <fontDescription key="fontDescription" name="IRONMANOFWAR2NCV" family="IRON MAN OF WAR 2 NCV" pointSize="19"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Aa2-JX-sJQ" firstAttribute="width" secondItem="u4X-RB-j1s" secondAttribute="width" multiplier="0.7" constant="-44.099999999999966" id="5V7-NT-yfg"/>
+                    <constraint firstItem="iju-t8-C4v" firstAttribute="height" secondItem="u4X-RB-j1s" secondAttribute="height" id="Adf-3J-klu"/>
+                    <constraint firstItem="iju-t8-C4v" firstAttribute="top" secondItem="u4X-RB-j1s" secondAttribute="top" id="Cho-m0-W1e"/>
+                    <constraint firstAttribute="trailing" secondItem="iju-t8-C4v" secondAttribute="trailing" id="HKv-b9-qFj"/>
+                    <constraint firstItem="Aa2-JX-sJQ" firstAttribute="leading" secondItem="u4X-RB-j1s" secondAttribute="leading" constant="20" id="LsM-pN-rRI"/>
+                    <constraint firstAttribute="bottom" secondItem="iju-t8-C4v" secondAttribute="bottom" id="R0x-GE-Po7"/>
+                    <constraint firstItem="Aa2-JX-sJQ" firstAttribute="height" secondItem="u4X-RB-j1s" secondAttribute="height" multiplier="0.1" constant="10" id="dX7-bv-Z1X"/>
+                    <constraint firstItem="iju-t8-C4v" firstAttribute="leading" secondItem="Aa2-JX-sJQ" secondAttribute="trailing" constant="20" id="kxY-CW-fOF"/>
+                    <constraint firstItem="Aa2-JX-sJQ" firstAttribute="centerY" secondItem="u4X-RB-j1s" secondAttribute="centerY" id="ofD-Jt-ViB"/>
+                </constraints>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="62.5" y="40.5"/>
+        </tableViewCell>
+    </objects>
+</document>
