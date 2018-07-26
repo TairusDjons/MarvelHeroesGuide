@@ -45,11 +45,19 @@
                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GcV-Ka-2fr">
                         <rect key="frame" x="207" y="97" width="37" height="37"/>
                     </activityIndicatorView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jga-XG-vUj">
+                        <rect key="frame" x="225" y="115.5" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="IRONMANOFWAR2NCV" family="IRON MAN OF WAR 2 NCV" pointSize="30"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Jga-XG-vUj" firstAttribute="centerY" secondItem="f0i-NH-IZg" secondAttribute="centerY" id="5q9-01-246"/>
                     <constraint firstItem="ZJj-UW-0oq" firstAttribute="top" secondItem="88D-Sw-GCO" secondAttribute="bottom" constant="15" id="D9l-MJ-Rjq"/>
                     <constraint firstAttribute="trailing" secondItem="88D-Sw-GCO" secondAttribute="trailing" constant="20" id="SDB-db-uYU"/>
                     <constraint firstItem="ZJj-UW-0oq" firstAttribute="leading" secondItem="f0i-NH-IZg" secondAttribute="leading" id="dpu-4G-52J"/>
+                    <constraint firstItem="Jga-XG-vUj" firstAttribute="centerX" secondItem="f0i-NH-IZg" secondAttribute="centerX" id="erh-yL-JPE"/>
                     <constraint firstAttribute="trailing" secondItem="ZJj-UW-0oq" secondAttribute="trailing" id="faR-um-Ek9"/>
                     <constraint firstItem="88D-Sw-GCO" firstAttribute="leading" secondItem="f0i-NH-IZg" secondAttribute="leading" constant="20" id="gCu-uT-V1t"/>
                     <constraint firstItem="88D-Sw-GCO" firstAttribute="top" secondItem="f0i-NH-IZg" secondAttribute="top" id="xLt-U9-BuB"/>
@@ -61,6 +69,7 @@
                 <constraint firstItem="GcV-Ka-2fr" firstAttribute="centerX" secondItem="w1b-xa-gff" secondAttribute="centerX" id="hHU-ek-Gam"/>
             </constraints>
             <connections>
+                <outlet property="NoConnectedHeroLabel" destination="Jga-XG-vUj" id="G4M-Ph-X2p"/>
                 <outlet property="heroCollectionView" destination="ZJj-UW-0oq" id="0Lt-C3-fTv"/>
                 <outlet property="loadingIndicator" destination="GcV-Ka-2fr" id="uiM-aB-aav"/>
             </connections>
