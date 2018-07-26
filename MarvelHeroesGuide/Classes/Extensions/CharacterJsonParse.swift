@@ -14,7 +14,7 @@ extension Character {
         self.id = json["id"].intValue
         self.name = json["name"].stringValue
         self.description = json["description"].stringValue
-        self.uriImage = Thumbnail(json: json["thumbnail"])!
+        self.thumbnail = Thumbnail(json: json["thumbnail"])!
         self.resourceURI = json["resourceURI"].stringValue
         self.events = CollectionModel(json: json["events"])!
         var tempUrls = [UrlType]()
