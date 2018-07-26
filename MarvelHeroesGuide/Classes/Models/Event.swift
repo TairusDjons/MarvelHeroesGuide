@@ -7,11 +7,12 @@
 //
 
 import Foundation
-struct Event: ResourceItem {
+struct Event: MarvelBaseObject {
     let name: String
     let id: Int
     let description: String
     let thumbnail: Thumbnail
     let resourceURI: String
     let characters: CollectionModel
+    let urls: [UrlType]
 }
