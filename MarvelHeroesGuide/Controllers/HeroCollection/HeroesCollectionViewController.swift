@@ -9,10 +9,14 @@
 import UIKit
 import Kingfisher
 
-private let reuseIdentifier = "TagCell"
+private let reuseIdentifier = "ObjectCell"
 
-class HeroesCollectionViewController: UIViewController{
-
+class HeroesCollectionViewController: UIViewController, FilterDelegate{
+    func setName(name: String) {
+        self.searchName = name
+    }
+    
+    private var searchName: String?
     private var heroesList: [Character] {
         didSet {
             if heroesList.isEmpty {
@@ -20,12 +24,25 @@ class HeroesCollectionViewController: UIViewController{
             }
         }
     }
+    
+    private var searchHeroList = [Character]()
     private var characterService: CharacterServiceProtocol
     private var currentOffset: Int = 0
     private var totalChars: Int = 1500
     private var isLoading: Bool = false
     @IBOutlet fileprivate weak var heroCollectionView: UICollectionView!
     @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
+    
+    
+    
+    @IBAction func barButtonAction() {
+        let controller = FilterViewController(nibName: "TableObjectView", bundle: nil, filterDelegate: self)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func updateButton() {
+        updateCharacters()
+    }
     
     init(nibName: String?,
          bundle: Bundle?,
@@ -44,25 +61,41 @@ class HeroesCollectionViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Heroes"
+        
+        let searchItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(HeroesCollectionViewController.barButtonAction))
+        
+        let updateItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(HeroesCollectionViewController.updateButton))
+        
+        self.navigationItem.rightBarButtonItems = [searchItem, updateItem]
+        
         heroCollectionView.backgroundColor = Colors.backgroundMarvelRed
         
-        let cellNib = UINib(nibName: "HeroCell", bundle: nil)
+        let cellNib = UINib(nibName: "ObjectCell", bundle: nil)
         heroCollectionView?.register(cellNib, forCellWithReuseIdentifier: reuseIdentifier)
         heroCollectionView.dataSource = self
         heroCollectionView.delegate = self
+        
         let lineSpace = CGFloat(6)
         let interitemSpace = CGFloat(6)
         let insets = UIEdgeInsetsMake(20, 0, 10, 0)
         let itemSize = UIScreen.main.bounds.width/2 - 6
-        
+        getCharacters()
         
         setLayout(lineSpace: lineSpace,
                   interitemSpace: interitemSpace,
                   insets: insets,
                   itemSize: itemSize)
-        getCharacters()
-        
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard let searchName = self.searchName
+            else {
+                if !heroesList.isEmpty {
+                    updateCharacters(limit: heroesList.count)
+                }
+                return
+        }
+        updateCharacters(name: searchName)
     }
     
     override func didReceiveMemoryWarning() {
@@ -78,6 +111,28 @@ class HeroesCollectionViewController: UIViewController{
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
+
+    
+    
+    func updateCharacters (uri: String? = nil,
+                           name: String? = nil,
+                           offset: Int? = 0,
+                           limit: Int? = 20) {
+        request(uri: uri, name: name, offset: offset, limit: limit) {
+            result in self.heroesList = result
+        }
+    }
+    
+    func getCharacters(uri: String? = nil,
+                       name: String? = nil,
+                       offset: Int? = 0,
+                       limit: Int? = 20) {
+        request(uri: uri, name: name, offset: offset, limit: limit) {
+            result in self.heroesList.append(contentsOf: result)
+        }
+    }
+    
+    
 
 }
 
@@ -96,11 +151,11 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? HeroCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? ObjectCell
             else { fatalError("No cell available") }
         
         let name = heroesList[indexPath.row].name
-        let thumbnail = heroesList[indexPath.row].uriImage
+        let thumbnail = heroesList[indexPath.row].thumbnail
         cell.setOutlets(thumbnail: thumbnail, name: name)
         // Configure the cell
         
@@ -110,7 +165,7 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
         if (indexPath.item == heroesList.count-1 && currentOffset < totalChars && !isLoading) {
-            getCharacters(offset: currentOffset + 20)
+            getCharacters(name: searchName, offset: currentOffset + 20)
         }
     }
     
@@ -118,16 +173,18 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
         pushToDescription(hero: heroesList[indexPath.row])
     }
     
-    func getCharacters(name: String? = nil,
+    func request (uri: String? = nil,
+                        name: String? = nil,
                         offset: Int? = 0,
-                        limit: Int? = 20){
+                        limit: Int? = 20,
+                        action: @escaping ([Character])->()){
         self.loadingIndicator.startAnimating()
         isLoading = true
-        characterService.getCharacters(uri: nil, name: name, offset: offset, limit: limit) {
+        characterService.getCharacters(uri: uri, name: name, offset: offset, limit: limit) {
             result in
             switch result {
             case .success(let result):
-                self.heroesList.append(contentsOf: result)
+                action(result)
                 self.currentOffset += offset!
             case .error(let error):
                 print(error)
