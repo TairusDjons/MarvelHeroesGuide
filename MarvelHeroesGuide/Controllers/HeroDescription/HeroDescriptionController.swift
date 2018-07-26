@@ -101,8 +101,14 @@ class HeroDescriptionController: UIViewController {
                                                   limit: limit) {
             result in switch result {
             case .success(let result):
-                self.connectedHeroes.append(contentsOf: result)
-                self.currentOffset += offset!
+                if result.isEmpty {
+                    self.connectedHeroCell?.setNoConnectedLabel(string: "Seems this hero prefer be lone wolf")
+                }
+                else {
+                    self.connectedHeroes.append(contentsOf: result)
+                    self.currentOffset += offset!
+                }
+               
             case .error(let error):
                 print(error)
             }
@@ -161,7 +167,7 @@ extension HeroDescriptionController: UITableViewDelegate, UITableViewDataSource 
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ThumbnailCell") as? ThumbnailCell
                 else {return UITableViewCell()}
-            cell.setOutlets(thumbnail: hero.uriImage, name: hero.name)
+            cell.setOutlets(thumbnail: hero.thumbnail, name: hero.name)
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell") as? DetailCell
@@ -193,10 +199,10 @@ extension HeroDescriptionController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCell", for: indexPath) as? HeroCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ObjectCell", for: indexPath) as? ObjectCell
             else {return UICollectionViewCell()}
         let character = connectedHeroes[indexPath.row]
-        cell.setOutlets(thumbnail: character.uriImage, name: character.name)
+        cell.setOutlets(thumbnail: character.thumbnail, name: character.name)
         return cell
     }
     
