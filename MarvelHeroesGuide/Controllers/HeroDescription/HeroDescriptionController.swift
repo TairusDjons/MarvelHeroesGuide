@@ -20,6 +20,7 @@ class HeroDescriptionController: UIViewController {
     }
     
     private var currentOffset = 0
+    private var totalHeroes = 0
     private var isLoading: Bool = false
     private var connectedHeroCell: ConnectedHeroesCell?
     private let characterService: CharacterServiceProtocol
@@ -101,12 +102,13 @@ class HeroDescriptionController: UIViewController {
                                                   limit: limit) {
             result in switch result {
             case .success(let result):
-                if result.isEmpty {
+                if result.results.isEmpty {
                     self.connectedHeroCell?.setNoConnectedLabel(string: "Seems this hero prefer be lone wolf")
                 }
                 else {
-                    self.connectedHeroes.append(contentsOf: result)
+                    self.connectedHeroes.append(contentsOf: result.results)
                     self.currentOffset += offset!
+                    self.totalHeroes = result.data.total
                 }
                
             case .error(let error):
@@ -114,7 +116,7 @@ class HeroDescriptionController: UIViewController {
             }
             collectionCell.indicatorStopAnimating()
             collectionCell.reloadCollectionData()
-                                                    self.isLoading = false
+            self.isLoading = false
         }
     }
     
@@ -213,7 +215,9 @@ extension HeroDescriptionController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         guard let hero = self.hero
             else {return}
-        if (indexPath.item == connectedHeroes.count-1 && currentOffset < 2000 && !isLoading) {
+        
+        if (connectedHeroes.count >= totalHeroes) {return}
+        if (indexPath.item == connectedHeroes.count-1 && currentOffset < totalHeroes && !isLoading) {
             getConnectedCharacters(character: hero, offset: currentOffset + 20)
         }
     }

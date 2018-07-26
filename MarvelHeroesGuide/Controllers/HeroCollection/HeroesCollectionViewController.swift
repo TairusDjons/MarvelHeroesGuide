@@ -24,11 +24,9 @@ class HeroesCollectionViewController: UIViewController, FilterDelegate{
             }
         }
     }
-    
-    private var searchHeroList = [Character]()
+    private var totalHeroes: Int
     private var characterService: CharacterServiceProtocol
     private var currentOffset: Int = 0
-    private var totalChars: Int = 1500
     private var isLoading: Bool = false
     @IBOutlet fileprivate weak var heroCollectionView: UICollectionView!
     @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
@@ -42,6 +40,7 @@ class HeroesCollectionViewController: UIViewController, FilterDelegate{
     
     @IBAction func updateButton() {
         updateCharacters()
+        searchName = nil
     }
     
     init(nibName: String?,
@@ -49,6 +48,7 @@ class HeroesCollectionViewController: UIViewController, FilterDelegate{
          characterService: CharacterServiceProtocol) {
         self.characterService = characterService
         self.heroesList = [Character]()
+        self.totalHeroes = 0
         super.init(nibName: nibName, bundle: bundle)
     }
 
@@ -56,6 +56,7 @@ class HeroesCollectionViewController: UIViewController, FilterDelegate{
     required init?(coder aDecoder: NSCoder) {
         self.characterService = CharacterService()
         self.heroesList = [Character]()
+        self.totalHeroes = 0
         super.init(coder: aDecoder)
     }
     override func viewDidLoad() {
@@ -120,6 +121,7 @@ class HeroesCollectionViewController: UIViewController, FilterDelegate{
                            limit: Int? = 20) {
         request(uri: uri, name: name, offset: offset, limit: limit) {
             result in self.heroesList = result
+            self.currentOffset = 0
         }
     }
     
@@ -164,8 +166,9 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        if (indexPath.item == heroesList.count-1 && currentOffset < totalChars && !isLoading) {
-            getCharacters(name: searchName, offset: currentOffset + 20)
+        if (heroesList.count >= totalHeroes) { return }
+        if (indexPath.item == heroesList.count-1 && currentOffset < totalHeroes && !isLoading) {
+            getCharacters(name: searchName, offset: currentOffset + 50)
         }
     }
     
@@ -184,8 +187,9 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
             result in
             switch result {
             case .success(let result):
-                action(result)
-                self.currentOffset += offset!
+                action(result.results)
+                self.currentOffset = offset!
+                self.totalHeroes = result.data.total
             case .error(let error):
                 print(error)
             }

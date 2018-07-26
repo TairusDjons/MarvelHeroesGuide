@@ -13,19 +13,19 @@ protocol CharacterServiceProtocol {
                        name: String?,
                        offset: Int?,
                        limit: Int?,
-                       OnCompletion: @escaping (Result<[Character],Error>)->())
+                       OnCompletion: @escaping (Result<CharacterData,Error>)->())
     
     func getTotalCharCount(OnCompletion: @escaping (Result<Int, Error>)->())
     
     func getCharactersByEvent(event: Event,
                               offset: Int?,
                               limit: Int?,
-                              OnCompletion: @escaping (Result<[Character], Error>)->())
+                              OnCompletion: @escaping (Result<CharacterData, Error>)->())
     
     
     func getConnectedCharactersTo(character: Character,
                                   offset: Int?,
                                   limit: Int?,
-                                  OnCompletion: @escaping (Result<[Character],Error>)->())
+                                  OnCompletion: @escaping (Result<CharacterData, Error>)->())
 }
 

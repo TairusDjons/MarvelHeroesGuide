@@ -20,7 +20,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
     func getCharactersByEvent(event: Event,
                               offset: Int? = 0,
                               limit: Int? = 20,
-                              OnCompletion: @escaping (Result<[Character], Error>) -> ()) {
+                              OnCompletion: @escaping (Result<CharacterData, Error>) -> ()) {
         let uri = event.characters.collectionURI
         getCharacters(uri: uri, offset: offset, limit: limit) {
             result in switch result {
@@ -38,7 +38,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
     func getConnectedCharactersTo(character: Character,
                                   offset: Int? = 0,
                                   limit: Int? = 20,
-                                  OnCompletion: @escaping (Result<[Character], Error>) -> ()) {
+                                  OnCompletion: @escaping (Result<CharacterData, Error>) -> ()) {
         let api = character.events.collectionURI
         
         var params: [String: Any] = [
@@ -51,25 +51,25 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                 var counter = 0
                 var dictionary = Dictionary<Character, Int>()
                 var characters = [Character]()
-                var events = [Event]()
                 
-                for(_, subJson) in json["data"]["results"] {
-                    guard let event = Event(json: subJson)
-                        else {continue}
-                    events.append(event)
+                let eventData = EventData(json: json)
+                
+                guard let events = eventData?.results
+                    else {
+                        return
                 }
+                
                 if events.isEmpty {
-                    OnCompletion(.success(characters))
+                    OnCompletion(.success(CharacterData()))
                     return
                 }
-                
                 for event in events {
                     self.getCharactersByEvent(event: event,
                                               offset: offset,
                                               limit: limit) {
                         result in switch result {
                         case .success(let result):
-                            for char in result {
+                            for char in result.results {
                                 if dictionary[char] == nil {
                                     dictionary[char] = 1
                                 }
@@ -81,7 +81,9 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                         }
                         if (counter == events.count) {
                             characters.append(contentsOf: dictionary.keys)
-                            OnCompletion(.success(characters))
+                            let dataObject = DataObject(offset: 0, limit: 0, total: characters.count, count: 0)
+                            let data = CharacterData(data: dataObject, results: characters)
+                            OnCompletion(.success(data))
                             return
                         }
                     }
@@ -117,7 +119,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                         name: String? = nil,
                         offset: Int? = 0,
                         limit: Int? = 20,
-                        OnCompletion: @escaping (Result<[Character],Error>)->()) {
+                        OnCompletion: @escaping (Result<CharacterData, Error>)->()) {
 
         let url: String
         if uri != nil {url = uri!}
@@ -138,13 +140,8 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
             switch result {
             case .success(let value):
                 let json = JSON(value)
-                var characters = [Character]()
-                for(_, subJson) in json["data"]["results"] {
-                    guard let char = Character(json: subJson)
-                        else {continue}
-                    characters.append(char)
-                }
-                OnCompletion(.success(characters))
+                let data = CharacterData(json: json)!
+                OnCompletion(.success(data))
             case .error(let error):
                 OnCompletion(.error(error))
             }

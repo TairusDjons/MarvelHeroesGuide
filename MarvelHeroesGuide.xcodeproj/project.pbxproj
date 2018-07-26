@@ -64,6 +64,10 @@
 		B149D9422101437500A1CAC3 /* CharactersServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D9412101437500A1CAC3 /* CharactersServiceProtocol.swift */; };
 		B149D9442101503D00A1CAC3 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D9432101503D00A1CAC3 /* Character.swift */; };
 		B149D9462101505B00A1CAC3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D9452101505B00A1CAC3 /* Event.swift */; };
+		B1EEA500210A6D4100E5ED9E /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA4FF210A6D4100E5ED9E /* DataObjects.swift */; };
+		B1EEA502210A6E3B00E5ED9E /* DataObjectParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA501210A6E3B00E5ED9E /* DataObjectParse.swift */; };
+		B1EEA504210A73E000E5ED9E /* CharacterDataParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA503210A73E000E5ED9E /* CharacterDataParse.swift */; };
+		B1EEA506210A799F00E5ED9E /* EventDataParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA505210A799F00E5ED9E /* EventDataParse.swift */; };
 		E4BDC0A29705DCA32FC34CEE /* Pods_MarvelHeroesGuideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F609AD038D845DE9242E11 /* Pods_MarvelHeroesGuideTests.framework */; };
 		F56826FE39BD8A353954F36C /* Pods_MarvelHeroesGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C7EAB858B129B0DDDD664A /* Pods_MarvelHeroesGuide.framework */; };
 /* End PBXBuildFile section */
@@ -153,6 +157,10 @@
 		B149D9412101437500A1CAC3 /* CharactersServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersServiceProtocol.swift; sourceTree = "<group>"; };
 		B149D9432101503D00A1CAC3 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		B149D9452101505B00A1CAC3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		B1EEA4FF210A6D4100E5ED9E /* DataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
+		B1EEA501210A6E3B00E5ED9E /* DataObjectParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectParse.swift; sourceTree = "<group>"; };
+		B1EEA503210A73E000E5ED9E /* CharacterDataParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataParse.swift; sourceTree = "<group>"; };
+		B1EEA505210A799F00E5ED9E /* EventDataParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataParse.swift; sourceTree = "<group>"; };
 		B8C7EAB858B129B0DDDD664A /* Pods_MarvelHeroesGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelHeroesGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD53DC6017798B09D2AA91C /* Pods-MarvelHeroesGuideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroesGuideUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelHeroesGuideUITests/Pods-MarvelHeroesGuideUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD3FA2FB3C38AE036B09DBB /* Pods-MarvelHeroesGuideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroesGuideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelHeroesGuideTests/Pods-MarvelHeroesGuideTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +213,9 @@
 				B12AA81A2105341C003335E8 /* CollectionModelParse.swift */,
 				B12AA81E21053B73003335E8 /* ItemJsonParse.swift */,
 				B144F00C2106595E001E6DE8 /* AlertViewController.swift */,
+				B1EEA501210A6E3B00E5ED9E /* DataObjectParse.swift */,
+				B1EEA503210A73E000E5ED9E /* CharacterDataParse.swift */,
+				B1EEA505210A799F00E5ED9E /* EventDataParse.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -394,6 +405,7 @@
 				B11B061F210253F3003021ED /* Thumbnail.swift */,
 				B12AA81C210535EB003335E8 /* item.swift */,
 				B144F01B2106832E001E6DE8 /* Url.swift */,
+				B1EEA4FF210A6D4100E5ED9E /* DataObjects.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -704,6 +716,7 @@
 				B1249A052102948300928C87 /* Colors.swift in Sources */,
 				B144F01321067DCE001E6DE8 /* WikiButtonCell.swift in Sources */,
 				B149D9442101503D00A1CAC3 /* Character.swift in Sources */,
+				B1EEA506210A799F00E5ED9E /* EventDataParse.swift in Sources */,
 				B149D9462101505B00A1CAC3 /* Event.swift in Sources */,
 				B12DFBF321092A7800BEA68C /* jsonParsable.swift in Sources */,
 				B12AA819210532C9003335E8 /* ResourceItem.swift in Sources */,
@@ -711,18 +724,21 @@
 				B144F01C2106832E001E6DE8 /* Url.swift in Sources */,
 				B12AA80E2104C964003335E8 /* DetailCell.swift in Sources */,
 				B11B0620210253F3003021ED /* Thumbnail.swift in Sources */,
+				B1EEA500210A6D4100E5ED9E /* DataObjects.swift in Sources */,
 				B12AA8122104CCEC003335E8 /* ConnectedHeroesCell.swift in Sources */,
 				B12AA81D210535EB003335E8 /* item.swift in Sources */,
 				B12DFBEF2109254000BEA68C /* MarvelBaseObject.swift in Sources */,
 				B149D93B21011EC100A1CAC3 /* APIKeysConverter.swift in Sources */,
 				B12AA8102104CB42003335E8 /* ThumbnailCell.swift in Sources */,
 				B144F00D2106595E001E6DE8 /* AlertViewController.swift in Sources */,
+				B1EEA502210A6E3B00E5ED9E /* DataObjectParse.swift in Sources */,
 				B149D93521011CFC00A1CAC3 /* ResultType.swift in Sources */,
 				B12AA81F21053B73003335E8 /* ItemJsonParse.swift in Sources */,
 				B149D9422101437500A1CAC3 /* CharactersServiceProtocol.swift in Sources */,
 				B11B06222102541D003021ED /* CharacterJsonParse.swift in Sources */,
 				B12DFC022109397D00BEA68C /* FilterNameTableCell.swift in Sources */,
 				B149D90021010D7B00A1CAC3 /* ViewController.swift in Sources */,
+				B1EEA504210A73E000E5ED9E /* CharacterDataParse.swift in Sources */,
 				B149D8FE21010D7B00A1CAC3 /* AppDelegate.swift in Sources */,
 				B149D93721011DFF00A1CAC3 /* ResponseType.swift in Sources */,
 				B144F00F21065D13001E6DE8 /* ErrorHandler.swift in Sources */,
