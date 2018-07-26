@@ -13,13 +13,15 @@ class ConnectedHeroesCell: UITableViewCell {
     @IBOutlet fileprivate weak var heroCollectionView: UICollectionView!
     @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
     
+    @IBOutlet fileprivate weak var NoConnectedHeroLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         heroCollectionView.backgroundColor = Colors.backgroundMarvelRed
         self.backgroundColor = Colors.backgroundMarvelRed
         
-        let cellNib = UINib(nibName: "HeroCell", bundle: nil)
-        heroCollectionView?.register(cellNib, forCellWithReuseIdentifier: "TagCell")
+        let cellNib = UINib(nibName: "ObjectCell", bundle: nil)
+        heroCollectionView?.register(cellNib, forCellWithReuseIdentifier: "ObjectCell")
         let lineSpace = CGFloat(6)
         let interitemSpace = CGFloat(6)
         let itemSize = UIScreen.main.bounds.height/4 - 6
@@ -32,6 +34,9 @@ class ConnectedHeroesCell: UITableViewCell {
         }
         
     
+    func setNoConnectedLabel(string: String) {
+        self.NoConnectedHeroLabel.text = string
+    }
 
     func setLayout(lineSpace: CGFloat,
                    interitemSpace: CGFloat,
