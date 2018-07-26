@@ -41,7 +41,10 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                                   OnCompletion: @escaping (Result<[Character], Error>) -> ()) {
         let api = character.events.collectionURI
         
-        makeRequest(url: api, method: .get, encoding:URLEncoding.default) {
+        var params: [String: Any] = [
+            "limit": character.events.available
+        ]
+        makeRequest(url: api, method: .get, parameters: params, encoding:URLEncoding.default) {
             result in switch result {
             case .success(let result):
                 let json = JSON(result)
@@ -55,6 +58,11 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                         else {continue}
                     events.append(event)
                 }
+                if events.isEmpty {
+                    OnCompletion(.success(characters))
+                    return
+                }
+                
                 for event in events {
                     self.getCharactersByEvent(event: event,
                                               offset: offset,
@@ -121,7 +129,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
         ]
         
         if let name = name {
-            params["name"] = name
+            params["nameStartsWith"] = name
         }
         
                 
