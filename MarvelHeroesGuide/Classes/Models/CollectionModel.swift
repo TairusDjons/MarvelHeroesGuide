@@ -10,5 +10,5 @@ import Foundation
 struct CollectionModel {
     let available: Int
     let collectionURI: String
-    let items: [Item]
+    let items: [ResourceItem]
 }
