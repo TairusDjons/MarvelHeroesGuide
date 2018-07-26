@@ -20,7 +20,7 @@ protocol CharacterServiceProtocol {
     func getCharactersByEvent(event: Event,
                               offset: Int?,
                               limit: Int?,
-                              OnCompletion: @escaping (Result<([Character]), Error>)->())
+                              OnCompletion: @escaping (Result<[Character], Error>)->())
     
     
     func getConnectedCharactersTo(character: Character,
