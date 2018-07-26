@@ -17,5 +17,11 @@ extension Event {
         self.name = json["title"].stringValue
         self.resourceURI = json["resourceURI"].stringValue
         self.characters = CollectionModel(json: json["characters"])!
+        var tempUrls = [UrlType]()
+        for (_, subJson) in json["urls"] {
+            tempUrls.append(UrlType(json: subJson)!)
+        }
+        self.urls = tempUrls
+        
     }
 }
