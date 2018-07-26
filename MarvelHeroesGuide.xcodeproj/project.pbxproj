@@ -14,8 +14,8 @@
 		B11B062A21025BF9003021ED /* CharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11B062921025BF9003021ED /* CharactersService.swift */; };
 		B11B062C2102606A003021ED /* HeroesCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B11B062B2102606A003021ED /* HeroesCollectionView.xib */; };
 		B12499FD2102913B00928C87 /* HeroesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12499FC2102913B00928C87 /* HeroesCollectionViewController.swift */; };
-		B1249A012102920300928C87 /* HeroCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1249A002102920300928C87 /* HeroCell.xib */; };
-		B1249A03210292B200928C87 /* HeroCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1249A02210292B200928C87 /* HeroCell.swift */; };
+		B1249A012102920300928C87 /* ObjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1249A002102920300928C87 /* ObjectCell.xib */; };
+		B1249A03210292B200928C87 /* ObjectCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1249A02210292B200928C87 /* ObjectCell.swift */; };
 		B1249A052102948300928C87 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1249A042102948300928C87 /* Colors.swift */; };
 		B127AF3A2103DA2800A86230 /* HeroDescription.xib in Resources */ = {isa = PBXBuildFile; fileRef = B127AF392103DA2800A86230 /* HeroDescription.xib */; };
 		B127AF3D2103DDAC00A86230 /* HeroDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B127AF3C2103DDAC00A86230 /* HeroDetailsCell.xib */; };
@@ -32,6 +32,15 @@
 		B12AA81B2105341C003335E8 /* CollectionModelParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AA81A2105341C003335E8 /* CollectionModelParse.swift */; };
 		B12AA81D210535EB003335E8 /* item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AA81C210535EB003335E8 /* item.swift */; };
 		B12AA81F21053B73003335E8 /* ItemJsonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AA81E21053B73003335E8 /* ItemJsonParse.swift */; };
+		B12DFBEF2109254000BEA68C /* MarvelBaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFBEE2109254000BEA68C /* MarvelBaseObject.swift */; };
+		B12DFBF1210926B000BEA68C /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFBF0210926B000BEA68C /* BaseObject.swift */; };
+		B12DFBF321092A7800BEA68C /* jsonParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFBF221092A7800BEA68C /* jsonParsable.swift */; };
+		B12DFBF621092BA000BEA68C /* TableObjectView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12DFBF521092BA000BEA68C /* TableObjectView.xib */; };
+		B12DFBF921092D3800BEA68C /* ObjectTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12DFBF821092D3800BEA68C /* ObjectTableCell.xib */; };
+		B12DFBFB2109300600BEA68C /* interfaceTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12DFBFA2109300600BEA68C /* interfaceTableCell.xib */; };
+		B12DFBFF210938B200BEA68C /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFBFE210938B200BEA68C /* FilterViewController.swift */; };
+		B12DFC022109397D00BEA68C /* FilterNameTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFC012109397D00BEA68C /* FilterNameTableCell.swift */; };
+		B12DFC0421093FE000BEA68C /* FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFC0321093FE000BEA68C /* FilterDelegate.swift */; };
 		B144F00B210658C8001E6DE8 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F00A210658C8001E6DE8 /* Alertable.swift */; };
 		B144F00D2106595E001E6DE8 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F00C2106595E001E6DE8 /* AlertViewController.swift */; };
 		B144F00F21065D13001E6DE8 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F00E21065D13001E6DE8 /* ErrorHandler.swift */; };
@@ -51,7 +60,7 @@
 		B149D9302101178B00A1CAC3 /* APIConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D92F2101178B00A1CAC3 /* APIConstant.swift */; };
 		B149D93221011C9D00A1CAC3 /* MakeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D93121011C9D00A1CAC3 /* MakeRequest.swift */; };
 		B149D93521011CFC00A1CAC3 /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D93421011CFC00A1CAC3 /* ResultType.swift */; };
-		B149D93721011DFF00A1CAC3 /* ResponseTyoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D93621011DFF00A1CAC3 /* ResponseTyoe.swift */; };
+		B149D93721011DFF00A1CAC3 /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D93621011DFF00A1CAC3 /* ResponseType.swift */; };
 		B149D93B21011EC100A1CAC3 /* APIKeysConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D93A21011EC100A1CAC3 /* APIKeysConverter.swift */; };
 		B149D93D210120C700A1CAC3 /* APIkeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = B149D93C210120C700A1CAC3 /* APIkeys.plist */; };
 		B149D93F21013D1F00A1CAC3 /* MarvelBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D93E21013D1F00A1CAC3 /* MarvelBaseService.swift */; };
@@ -91,8 +100,8 @@
 		B11B062921025BF9003021ED /* CharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersService.swift; sourceTree = "<group>"; };
 		B11B062B2102606A003021ED /* HeroesCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroesCollectionView.xib; sourceTree = "<group>"; };
 		B12499FC2102913B00928C87 /* HeroesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCollectionViewController.swift; sourceTree = "<group>"; };
-		B1249A002102920300928C87 /* HeroCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroCell.xib; sourceTree = "<group>"; };
-		B1249A02210292B200928C87 /* HeroCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCell.swift; sourceTree = "<group>"; };
+		B1249A002102920300928C87 /* ObjectCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectCell.xib; sourceTree = "<group>"; };
+		B1249A02210292B200928C87 /* ObjectCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectCell.swift; sourceTree = "<group>"; };
 		B1249A042102948300928C87 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B127AF392103DA2800A86230 /* HeroDescription.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDescription.xib; sourceTree = "<group>"; };
 		B127AF3C2103DDAC00A86230 /* HeroDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailsCell.xib; sourceTree = "<group>"; };
@@ -109,6 +118,15 @@
 		B12AA81A2105341C003335E8 /* CollectionModelParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModelParse.swift; sourceTree = "<group>"; };
 		B12AA81C210535EB003335E8 /* item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = item.swift; sourceTree = "<group>"; };
 		B12AA81E21053B73003335E8 /* ItemJsonParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemJsonParse.swift; sourceTree = "<group>"; };
+		B12DFBEE2109254000BEA68C /* MarvelBaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelBaseObject.swift; sourceTree = "<group>"; };
+		B12DFBF0210926B000BEA68C /* BaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
+		B12DFBF221092A7800BEA68C /* jsonParsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonParsable.swift; sourceTree = "<group>"; };
+		B12DFBF521092BA000BEA68C /* TableObjectView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableObjectView.xib; sourceTree = "<group>"; };
+		B12DFBF821092D3800BEA68C /* ObjectTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectTableCell.xib; sourceTree = "<group>"; };
+		B12DFBFA2109300600BEA68C /* interfaceTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = interfaceTableCell.xib; sourceTree = "<group>"; };
+		B12DFBFE210938B200BEA68C /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		B12DFC012109397D00BEA68C /* FilterNameTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterNameTableCell.swift; sourceTree = "<group>"; };
+		B12DFC0321093FE000BEA68C /* FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDelegate.swift; sourceTree = "<group>"; };
 		B144F00A210658C8001E6DE8 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		B144F00C2106595E001E6DE8 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		B144F00E21065D13001E6DE8 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
@@ -134,7 +152,7 @@
 		B149D92F2101178B00A1CAC3 /* APIConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstant.swift; sourceTree = "<group>"; };
 		B149D93121011C9D00A1CAC3 /* MakeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRequest.swift; sourceTree = "<group>"; };
 		B149D93421011CFC00A1CAC3 /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
-		B149D93621011DFF00A1CAC3 /* ResponseTyoe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseTyoe.swift; sourceTree = "<group>"; };
+		B149D93621011DFF00A1CAC3 /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
 		B149D93A21011EC100A1CAC3 /* APIKeysConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeysConverter.swift; sourceTree = "<group>"; };
 		B149D93C210120C700A1CAC3 /* APIkeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = APIkeys.plist; sourceTree = "<group>"; };
 		B149D93E21013D1F00A1CAC3 /* MarvelBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelBaseService.swift; sourceTree = "<group>"; };
@@ -209,6 +227,7 @@
 		B12499FE210291E800928C87 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B12DFBF721092D0600BEA68C /* BaseTableViewCells */,
 				B127AF3B2103DD7C00A86230 /* DescriptionCells */,
 				B12499FF210291F000928C87 /* HeroCell */,
 			);
@@ -218,8 +237,8 @@
 		B12499FF210291F000928C87 /* HeroCell */ = {
 			isa = PBXGroup;
 			children = (
-				B1249A002102920300928C87 /* HeroCell.xib */,
-				B1249A02210292B200928C87 /* HeroCell.swift */,
+				B1249A002102920300928C87 /* ObjectCell.xib */,
+				B1249A02210292B200928C87 /* ObjectCell.swift */,
 			);
 			path = HeroCell;
 			sourceTree = "<group>";
@@ -254,6 +273,33 @@
 				B12AA8142104E050003335E8 /* IRON_MAN_OF_WAR_2_NCV.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B12DFBF421092B6F00BEA68C /* TableObjectView */ = {
+			isa = PBXGroup;
+			children = (
+				B12DFBF521092BA000BEA68C /* TableObjectView.xib */,
+				B12DFBFE210938B200BEA68C /* FilterViewController.swift */,
+			);
+			path = TableObjectView;
+			sourceTree = "<group>";
+		};
+		B12DFBF721092D0600BEA68C /* BaseTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B12DFC002109395400BEA68C /* FilterCellControllers */,
+				B12DFBF821092D3800BEA68C /* ObjectTableCell.xib */,
+				B12DFBFA2109300600BEA68C /* interfaceTableCell.xib */,
+			);
+			path = BaseTableViewCells;
+			sourceTree = "<group>";
+		};
+		B12DFC002109395400BEA68C /* FilterCellControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B12DFC012109397D00BEA68C /* FilterNameTableCell.swift */,
+			);
+			path = FilterCellControllers;
 			sourceTree = "<group>";
 		};
 		B144F0162106809B001E6DE8 /* WikiWebView */ = {
@@ -338,6 +384,10 @@
 				B149D9412101437500A1CAC3 /* CharactersServiceProtocol.swift */,
 				B144F00A210658C8001E6DE8 /* Alertable.swift */,
 				B144F00E21065D13001E6DE8 /* ErrorHandler.swift */,
+				B12DFBEE2109254000BEA68C /* MarvelBaseObject.swift */,
+				B12DFBF0210926B000BEA68C /* BaseObject.swift */,
+				B12DFBF221092A7800BEA68C /* jsonParsable.swift */,
+				B12DFC0321093FE000BEA68C /* FilterDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -370,7 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				B149D93421011CFC00A1CAC3 /* ResultType.swift */,
-				B149D93621011DFF00A1CAC3 /* ResponseTyoe.swift */,
+				B149D93621011DFF00A1CAC3 /* ResponseType.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -392,6 +442,7 @@
 		B149D93921011E3C00A1CAC3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B12DFBF421092B6F00BEA68C /* TableObjectView */,
 				B144F0162106809B001E6DE8 /* WikiWebView */,
 				B127AF382103D9F800A86230 /* HeroDescription */,
 				B12499FE210291E800928C87 /* Cells */,
@@ -533,14 +584,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B12DFBFB2109300600BEA68C /* interfaceTableCell.xib in Resources */,
 				B127AF3D2103DDAC00A86230 /* HeroDetailsCell.xib in Resources */,
 				B144F018210680B8001E6DE8 /* WikiWebView.xib in Resources */,
 				B127AF412103DEB700A86230 /* ConnectedHeroesCell.xib in Resources */,
 				B149D90821010D8600A1CAC3 /* LaunchScreen.storyboard in Resources */,
 				B127AF3A2103DA2800A86230 /* HeroDescription.xib in Resources */,
 				B127AF3F2103DE9000A86230 /* HeroThumbnailCell.xib in Resources */,
+				B12DFBF921092D3800BEA68C /* ObjectTableCell.xib in Resources */,
+				B12DFBF621092BA000BEA68C /* TableObjectView.xib in Resources */,
 				B12AA8152104E2A5003335E8 /* IRON_MAN_OF_WAR_2_NCV.ttf in Resources */,
-				B1249A012102920300928C87 /* HeroCell.xib in Resources */,
+				B1249A012102920300928C87 /* ObjectCell.xib in Resources */,
 				B149D93D210120C700A1CAC3 /* APIkeys.plist in Resources */,
 				B149D90521010D8600A1CAC3 /* Assets.xcassets in Resources */,
 				B11B062C2102606A003021ED /* HeroesCollectionView.xib in Resources */,
@@ -660,6 +714,7 @@
 				B144F01321067DCE001E6DE8 /* WikiButtonCell.swift in Sources */,
 				B149D9442101503D00A1CAC3 /* Character.swift in Sources */,
 				B149D9462101505B00A1CAC3 /* Event.swift in Sources */,
+				B12DFBF321092A7800BEA68C /* jsonParsable.swift in Sources */,
 				B12AA819210532C9003335E8 /* ResourceItem.swift in Sources */,
 				B12AA8172105328D003335E8 /* CollectionModel.swift in Sources */,
 				B144F01C2106832E001E6DE8 /* Url.swift in Sources */,
@@ -667,6 +722,8 @@
 				B11B0620210253F3003021ED /* Thumbnail.swift in Sources */,
 				B12AA8122104CCEC003335E8 /* ConnectedHeroesCell.swift in Sources */,
 				B12AA81D210535EB003335E8 /* item.swift in Sources */,
+				B12DFBF1210926B000BEA68C /* BaseObject.swift in Sources */,
+				B12DFBEF2109254000BEA68C /* MarvelBaseObject.swift in Sources */,
 				B149D93B21011EC100A1CAC3 /* APIKeysConverter.swift in Sources */,
 				B12AA8102104CB42003335E8 /* ThumbnailCell.swift in Sources */,
 				B144F00D2106595E001E6DE8 /* AlertViewController.swift in Sources */,
@@ -675,17 +732,20 @@
 				B149D9422101437500A1CAC3 /* CharactersServiceProtocol.swift in Sources */,
 				B11B06222102541D003021ED /* CharacterJsonParse.swift in Sources */,
 				B144F01121065D5C001E6DE8 /* APIErrorHandler.swift in Sources */,
+				B12DFC022109397D00BEA68C /* FilterNameTableCell.swift in Sources */,
 				B149D90021010D7B00A1CAC3 /* ViewController.swift in Sources */,
 				B149D8FE21010D7B00A1CAC3 /* AppDelegate.swift in Sources */,
-				B149D93721011DFF00A1CAC3 /* ResponseTyoe.swift in Sources */,
+				B149D93721011DFF00A1CAC3 /* ResponseType.swift in Sources */,
 				B144F00F21065D13001E6DE8 /* ErrorHandler.swift in Sources */,
 				B149D93F21013D1F00A1CAC3 /* MarvelBaseService.swift in Sources */,
 				B149D9302101178B00A1CAC3 /* APIConstant.swift in Sources */,
 				B11B0624210257D3003021ED /* EventJsonParse.swift in Sources */,
-				B1249A03210292B200928C87 /* HeroCell.swift in Sources */,
+				B1249A03210292B200928C87 /* ObjectCell.swift in Sources */,
+				B12DFBFF210938B200BEA68C /* FilterViewController.swift in Sources */,
 				B12AA80C2104C280003335E8 /* BaseDataStruct.swift in Sources */,
 				B12AA81B2105341C003335E8 /* CollectionModelParse.swift in Sources */,
 				B11B062A21025BF9003021ED /* CharactersService.swift in Sources */,
+				B12DFC0421093FE000BEA68C /* FilterDelegate.swift in Sources */,
 				B149D93221011C9D00A1CAC3 /* MakeRequest.swift in Sources */,
 				B144F00B210658C8001E6DE8 /* Alertable.swift in Sources */,
 			);
