@@ -13,3 +13,8 @@ protocol ResourceItem {
     var name: String {get}
 }
 
+extension ResourceItem {
+    init?(json: JSON) {
+        self.init(json: json)
+    }
+}
