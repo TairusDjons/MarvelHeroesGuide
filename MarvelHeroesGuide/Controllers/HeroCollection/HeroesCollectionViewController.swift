@@ -1,4 +1,4 @@
-//
+ //
 //  HeroesCollectionViewController.swift
 //  MarvelHeroesGuide
 //
@@ -28,6 +28,7 @@ class HeroesCollectionViewController: UIViewController, FilterDelegate{
     private var characterService: CharacterServiceProtocol
     private var currentOffset: Int = 0
     private var isLoading: Bool = false
+    
     @IBOutlet fileprivate weak var heroCollectionView: UICollectionView!
     @IBOutlet fileprivate weak var loadingIndicator: UIActivityIndicatorView!
     
@@ -189,7 +190,7 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
             case .success(let result):
                 action(result.results)
                 self.currentOffset = offset!
-                self.totalHeroes = result.data.total
+                self.totalHeroes = result.total
             case .error(let error):
                 print(error)
             }

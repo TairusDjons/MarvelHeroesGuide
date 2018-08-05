@@ -39,6 +39,7 @@
 		B12DFBFF210938B200BEA68C /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFBFE210938B200BEA68C /* FilterViewController.swift */; };
 		B12DFC022109397D00BEA68C /* FilterNameTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFC012109397D00BEA68C /* FilterNameTableCell.swift */; };
 		B12DFC0421093FE000BEA68C /* FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DFC0321093FE000BEA68C /* FilterDelegate.swift */; };
+		B133F307210E70250066F8E8 /* EventResourceItemInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B133F306210E70250066F8E8 /* EventResourceItemInit.swift */; };
 		B144F00B210658C8001E6DE8 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F00A210658C8001E6DE8 /* Alertable.swift */; };
 		B144F00D2106595E001E6DE8 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F00C2106595E001E6DE8 /* AlertViewController.swift */; };
 		B144F00F21065D13001E6DE8 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B144F00E21065D13001E6DE8 /* ErrorHandler.swift */; };
@@ -66,8 +67,6 @@
 		B149D9462101505B00A1CAC3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = B149D9452101505B00A1CAC3 /* Event.swift */; };
 		B1EEA500210A6D4100E5ED9E /* DataObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA4FF210A6D4100E5ED9E /* DataObjects.swift */; };
 		B1EEA502210A6E3B00E5ED9E /* DataObjectParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA501210A6E3B00E5ED9E /* DataObjectParse.swift */; };
-		B1EEA504210A73E000E5ED9E /* CharacterDataParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA503210A73E000E5ED9E /* CharacterDataParse.swift */; };
-		B1EEA506210A799F00E5ED9E /* EventDataParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EEA505210A799F00E5ED9E /* EventDataParse.swift */; };
 		E4BDC0A29705DCA32FC34CEE /* Pods_MarvelHeroesGuideTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94F609AD038D845DE9242E11 /* Pods_MarvelHeroesGuideTests.framework */; };
 		F56826FE39BD8A353954F36C /* Pods_MarvelHeroesGuide.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8C7EAB858B129B0DDDD664A /* Pods_MarvelHeroesGuide.framework */; };
 /* End PBXBuildFile section */
@@ -126,6 +125,7 @@
 		B12DFBFE210938B200BEA68C /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		B12DFC012109397D00BEA68C /* FilterNameTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterNameTableCell.swift; sourceTree = "<group>"; };
 		B12DFC0321093FE000BEA68C /* FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDelegate.swift; sourceTree = "<group>"; };
+		B133F306210E70250066F8E8 /* EventResourceItemInit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventResourceItemInit.swift; sourceTree = "<group>"; };
 		B144F00A210658C8001E6DE8 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		B144F00C2106595E001E6DE8 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		B144F00E21065D13001E6DE8 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
@@ -159,8 +159,6 @@
 		B149D9452101505B00A1CAC3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		B1EEA4FF210A6D4100E5ED9E /* DataObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjects.swift; sourceTree = "<group>"; };
 		B1EEA501210A6E3B00E5ED9E /* DataObjectParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObjectParse.swift; sourceTree = "<group>"; };
-		B1EEA503210A73E000E5ED9E /* CharacterDataParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataParse.swift; sourceTree = "<group>"; };
-		B1EEA505210A799F00E5ED9E /* EventDataParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataParse.swift; sourceTree = "<group>"; };
 		B8C7EAB858B129B0DDDD664A /* Pods_MarvelHeroesGuide.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarvelHeroesGuide.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD53DC6017798B09D2AA91C /* Pods-MarvelHeroesGuideUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroesGuideUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelHeroesGuideUITests/Pods-MarvelHeroesGuideUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FCD3FA2FB3C38AE036B09DBB /* Pods-MarvelHeroesGuideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelHeroesGuideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MarvelHeroesGuideTests/Pods-MarvelHeroesGuideTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -214,8 +212,7 @@
 				B12AA81E21053B73003335E8 /* ItemJsonParse.swift */,
 				B144F00C2106595E001E6DE8 /* AlertViewController.swift */,
 				B1EEA501210A6E3B00E5ED9E /* DataObjectParse.swift */,
-				B1EEA503210A73E000E5ED9E /* CharacterDataParse.swift */,
-				B1EEA505210A799F00E5ED9E /* EventDataParse.swift */,
+				B133F306210E70250066F8E8 /* EventResourceItemInit.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -716,9 +713,9 @@
 				B1249A052102948300928C87 /* Colors.swift in Sources */,
 				B144F01321067DCE001E6DE8 /* WikiButtonCell.swift in Sources */,
 				B149D9442101503D00A1CAC3 /* Character.swift in Sources */,
-				B1EEA506210A799F00E5ED9E /* EventDataParse.swift in Sources */,
 				B149D9462101505B00A1CAC3 /* Event.swift in Sources */,
 				B12DFBF321092A7800BEA68C /* jsonParsable.swift in Sources */,
+				B133F307210E70250066F8E8 /* EventResourceItemInit.swift in Sources */,
 				B12AA819210532C9003335E8 /* ResourceItem.swift in Sources */,
 				B12AA8172105328D003335E8 /* CollectionModel.swift in Sources */,
 				B144F01C2106832E001E6DE8 /* Url.swift in Sources */,
@@ -738,7 +735,6 @@
 				B11B06222102541D003021ED /* CharacterJsonParse.swift in Sources */,
 				B12DFC022109397D00BEA68C /* FilterNameTableCell.swift in Sources */,
 				B149D90021010D7B00A1CAC3 /* ViewController.swift in Sources */,
-				B1EEA504210A73E000E5ED9E /* CharacterDataParse.swift in Sources */,
 				B149D8FE21010D7B00A1CAC3 /* AppDelegate.swift in Sources */,
 				B149D93721011DFF00A1CAC3 /* ResponseType.swift in Sources */,
 				B144F00F21065D13001E6DE8 /* ErrorHandler.swift in Sources */,
