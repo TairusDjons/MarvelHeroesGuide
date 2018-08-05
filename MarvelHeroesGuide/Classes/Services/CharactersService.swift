@@ -15,33 +15,45 @@ private enum localError: Error {
 }
 
 class CharacterService: MarvelBaseService, CharacterServiceProtocol {
+
     
-    
-    func getCharactersByEvent(event: Event,
-                              offset: Int? = 0,
-                              limit: Int? = 20,
-                              OnCompletion: @escaping (Result<CharacterData, Error>) -> ()) {
-        let uri = event.characters.collectionURI
-        getCharacters(uri: uri, offset: offset, limit: limit) {
+    func getCharactersBy(event uri: String,
+                        offset: Int? = 0,
+                        limit: Int? = 20,
+                        OnCompletion: @escaping (Result<DataObject<Character>, Error>) -> ()) {
+        //Get full info about event
+        makeRequest(url: uri, method: .get, encoding: URLEncoding.default) {
             result in switch result {
             case .success(let result):
-                OnCompletion(.success(result))
+                let json = JSON(result)
+                //We get only one event here, that's why we use results.first
+                guard let data = DataObject<Event>(json: json["data"]),
+                      let event = data.results.first
+                    else {return}
+                
+                self.getCharacters(uri: event.characters.collectionURI, offset: offset, limit: limit) {
+                    result in switch result {
+                    case .success(let result):
+                        OnCompletion(.success(result))
+                    case .error(let error):
+                        OnCompletion(.error(error))
+                    }
+                }
             case .error(let error):
                 OnCompletion(.error(error))
             }
         }
     }
     
+    //Very time consuming, not recommended for use
     
-    
-    
-    func getConnectedCharactersTo(character: Character,
+    func getAllConnectedCharactersTo(character: Character,
                                   offset: Int? = 0,
                                   limit: Int? = 20,
-                                  OnCompletion: @escaping (Result<CharacterData, Error>) -> ()) {
+                                  OnCompletion: @escaping (Result<DataObject<Character>, Error>) -> ()) {
         let api = character.events.collectionURI
         
-        var params: [String: Any] = [
+        let params: [String: Any] = [
             "limit": character.events.available
         ]
         makeRequest(url: api, method: .get, parameters: params, encoding:URLEncoding.default) {
@@ -52,7 +64,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                 var dictionary = Dictionary<Character, Int>()
                 var characters = [Character]()
                 
-                let eventData = EventData(json: json)
+                let eventData = DataObject<Event>(json: json)
                 
                 guard let events = eventData?.results
                     else {
@@ -60,20 +72,16 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                 }
                 
                 if events.isEmpty {
-                    OnCompletion(.success(CharacterData()))
+                    OnCompletion(.success(DataObject<Character>()))
                     return
                 }
                 for event in events {
-                    self.getCharactersByEvent(event: event,
-                                              offset: offset,
-                                              limit: limit) {
+                    self.getCharactersBy(event: event.resourceURI,
+                                        offset: offset,
+                                        limit: limit) {
                         result in switch result {
                         case .success(let result):
-                            for char in result.results {
-                                if dictionary[char] == nil {
-                                    dictionary[char] = 1
-                                }
-                            }
+                            OnCompletion(.success(result))
                             counter += 1
                         case .error(let error):
                             OnCompletion(.error(error))
@@ -81,9 +89,12 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                         }
                         if (counter == events.count) {
                             characters.append(contentsOf: dictionary.keys)
-                            let dataObject = DataObject(offset: 0, limit: 0, total: characters.count, count: 0)
-                            let data = CharacterData(data: dataObject, results: characters)
-                            OnCompletion(.success(data))
+                            let dataObject = DataObject<Character>(offset: 0,
+                                                                   limit: 0,
+                                                                   total: characters.count,
+                                                                   count: 0,
+                                                                   collection: characters)
+                            OnCompletion(.success(dataObject))
                             return
                         }
                     }
@@ -98,7 +109,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
     
     
     func getTotalCharCount(OnCompletion: @escaping (Result<Int, Error>) -> ()) {
-        var params: [String: Any] = [
+        let params: [String: Any] = [
             "limit": 0
         ]
         makeRequest(url: API.base + API.characters, method: .get, parameters: params, encoding: URLEncoding.default) {
@@ -119,7 +130,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                         name: String? = nil,
                         offset: Int? = 0,
                         limit: Int? = 20,
-                        OnCompletion: @escaping (Result<CharacterData, Error>)->()) {
+                        OnCompletion: @escaping (Result<DataObject<Character>, Error>)->()) {
 
         let url: String
         if uri != nil {url = uri!}
@@ -140,7 +151,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
             switch result {
             case .success(let value):
                 let json = JSON(value)
-                let data = CharacterData(json: json)!
+                let data = DataObject<Character>(json: json["data"])!
                 OnCompletion(.success(data))
             case .error(let error):
                 OnCompletion(.error(error))
