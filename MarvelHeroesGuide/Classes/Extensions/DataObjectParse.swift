@@ -15,6 +15,11 @@ extension DataObject {
         self.limit = json["limit"].intValue
         self.offset = json["offset"].intValue
         self.total = json["total"].intValue
+        var collection = [T]()
+        for (_, subJson) in json["results"] {
+            collection.append(T(json: subJson)!)
+        }
+        self.results = collection
     }
 }
 

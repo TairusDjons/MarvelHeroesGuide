@@ -8,37 +8,27 @@
 
 import Foundation
 
-struct DataObject {
+struct DataObject<T: MarvelBaseObject> {
     let offset: Int
     let limit: Int
     let total: Int
     let count: Int
+    let results: [T]
     
-    init(offset: Int, limit: Int, total: Int, count: Int) {
+    init () {
+        self.count = 0
+        self.offset = 0
+        self.total = 0
+        self.limit = 0
+        self.results = [T]()
+    }
+    
+    init(offset: Int, limit: Int, total: Int, count: Int, collection: [T]) {
         self.count = count
         self.offset = offset
         self.limit = limit
         self.total = total
+        self.results = collection
     }
 }
 
-
-struct CharacterData {
-    let data: DataObject
-    let results: [Character]
-    
-    init () {
-        self.data = DataObject(offset: 0, limit: 0, total: 0, count: 0)
-        self.results = [Character]()
-    }
-    
-    init (data: DataObject, results: [Character]) {
-        self.data = data
-        self.results = results
-    }
-}
-
-struct EventData {
-    let data: DataObject
-    let results: [Event]
-}

@@ -7,8 +7,8 @@
 //
 
 import Foundation
-struct CollectionModel {
+struct CollectionModel<T: MarvelBaseObject> {
     let available: Int
     let collectionURI: String
-    let items: [ResourceItem]
+    let items: [T]
 }

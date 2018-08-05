@@ -13,9 +13,9 @@ extension CollectionModel {
     init?(json: JSON) {
         self.available = json["available"].intValue
         self.collectionURI = json["collectionURI"].stringValue
-        var tempItems = [Item]()
+        var tempItems = [T]()
         for (_, subJson) in json["items"] {
-            tempItems.append(Item(json: subJson)!)
+            tempItems.append(T(json: subJson)!)
         }
         self.items = tempItems
     }
