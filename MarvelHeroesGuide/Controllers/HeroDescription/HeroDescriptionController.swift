@@ -11,14 +11,23 @@ import UIKit
 class HeroDescriptionController: UIViewController {
 
     private var hero: Character?
+    
     private var connectedHeroes = [Character]() {
         didSet {
-            guard let cell = connectedHeroCell
-                else {return}
+            guard let cell = connectedHeroCell,
+                      connectedHeroes.isEmpty
+                else { return }
+            
             cell.reloadCollectionData()
+            
+            guard !connectedHeroes.isEmpty
+                else {
+                    self.connectedHeroCell?.setNoConnectedLabel(string: "Seems this hero prefer be lone wolf")
+                    return
+            } 
         }
     }
-    
+    private var eventCounter = 0
     private var currentOffset = 0
     private var totalHeroes = 0
     private var isLoading: Bool = false
@@ -90,6 +99,7 @@ class HeroDescriptionController: UIViewController {
   
     func getConnectedCharacters(character: Character,
                                 offset: Int? = 0,
+                                eventCounter: Int? = 0,
                                 limit: Int? = 20) {
         isLoading = true
         guard let character = self.hero,
@@ -97,28 +107,52 @@ class HeroDescriptionController: UIViewController {
             else {return}
         
         collectionCell.indicatorStartAnimating()
-        characterService.getConnectedCharactersTo(character: character,
-                                                  offset: offset,
-                                                  limit: limit) {
+        
+        let event = character.events.items[eventCounter!].resourceURI
+        
+        characterService.getCharactersBy(event: event, offset: offset, limit: limit) {
             result in switch result {
             case .success(let result):
+                
+                self.totalHeroes = result.total
                 if result.results.isEmpty {
-                    self.connectedHeroCell?.setNoConnectedLabel(string: "Seems this hero prefer be lone wolf")
+                    self.eventCounter += 1
+                    self.currentOffset = 0
                 }
                 else {
-                    self.connectedHeroes.append(contentsOf: result.results)
-                    self.currentOffset += offset!
-                    self.totalHeroes = result.data.total
+                    let heroesSet = Set(result.results)
+                    self.connectedHeroes.append(contentsOf: heroesSet.subtracting(self.connectedHeroes))
+                    self.currentOffset = offset!
                 }
-               
-            case .error(let error):
-                print(error)
+            case .error(_):
+                print("ohhh")
             }
             collectionCell.indicatorStopAnimating()
             collectionCell.reloadCollectionData()
             self.isLoading = false
+
         }
+//        characterService.getAllConnectedCharactersTo(character: character,
+//                                                  offset: offset,
+//                                                  limit: limit) {
+//            result in switch result {
+//            case .success(let result):
+//                if result.results.isEmpty {
+//
+//                }
+//                else {
+//                    let heroesSet = Set(result.results)
+//                    self.connectedHeroes.append(contentsOf:  heroesSet.subtracting(self.connectedHeroes))
+//                    self.currentOffset += offset!
+//                    self.totalHeroes = result.data.total
+//                }
+//
+//            case .error(let error):
+//                print(error)
+//            }
+        
     }
+    
     
     func pushToDescription(hero: Character) {
         let controller = HeroDescriptionController(nibName: "HeroDescription",
@@ -139,17 +173,9 @@ class HeroDescriptionController: UIViewController {
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
+
 
 extension HeroDescriptionController: UITableViewDelegate, UITableViewDataSource {
     
@@ -216,10 +242,13 @@ extension HeroDescriptionController: UICollectionViewDelegate, UICollectionViewD
         guard let hero = self.hero
             else {return}
         
-        if (connectedHeroes.count >= totalHeroes) {return}
-        if (indexPath.item == connectedHeroes.count-1 && currentOffset < totalHeroes && !isLoading) {
-            getConnectedCharacters(character: hero, offset: currentOffset + 20)
-        }
+        
+        guard indexPath.item == connectedHeroes.count - 1,
+              currentOffset < totalHeroes,
+              !isLoading,
+              eventCounter < hero.events.available
+            else {return}
+        getConnectedCharacters(character: hero, offset: currentOffset + 5, eventCounter: self.eventCounter)
     }
     
     
