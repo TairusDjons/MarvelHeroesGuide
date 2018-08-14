@@ -13,7 +13,7 @@ struct Event: MarvelBaseObject {
     let description: String
     let thumbnail: Thumbnail
     let resourceURI: String
-    let characters: CollectionModel<Character>
+    let characters: ListModel<Summary>
     let urls: [UrlType]
     
     

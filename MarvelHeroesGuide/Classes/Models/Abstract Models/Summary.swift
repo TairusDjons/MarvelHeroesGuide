@@ -1,5 +1,5 @@
 //
-//  CollectionModel.swift
+//  item.swift
 //  MarvelHeroesGuide
 //
 //  Created by Tairus Djons on 23.07.2018.
@@ -7,8 +7,8 @@
 //
 
 import Foundation
-struct CollectionModel<T: MarvelBaseObject> {
-    let available: Int
-    let collectionURI: String
-    let items: [T]
+struct Summary: ResourceItem {
+    let name: String
+    let resourceURI: String
+    let roleOrType: String?
 }

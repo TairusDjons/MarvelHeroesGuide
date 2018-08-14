@@ -103,14 +103,19 @@ class HeroDescriptionController: UIViewController {
                                 limit: Int? = 20) {
         isLoading = true
         guard let character = self.hero,
+              character.events.available != 0,
               let collectionCell = self.connectedHeroCell
-            else {return}
+            else {
+                self.connectedHeroCell?.setNoConnectedLabel(string: "Seems this hero prefer be lone wolf")
+                return
+                
+        }
         
         collectionCell.indicatorStartAnimating()
         
-        let event = character.events.items[eventCounter!].resourceURI
+        let event = character.events.items[eventCounter!]
         
-        characterService.getCharactersBy(event: event, offset: offset, limit: limit) {
+        characterService.getCharactersBy(event: event.resourceURI, offset: offset, limit: limit) {
             result in switch result {
             case .success(let result):
                 
@@ -132,24 +137,6 @@ class HeroDescriptionController: UIViewController {
             self.isLoading = false
 
         }
-//        characterService.getAllConnectedCharactersTo(character: character,
-//                                                  offset: offset,
-//                                                  limit: limit) {
-//            result in switch result {
-//            case .success(let result):
-//                if result.results.isEmpty {
-//
-//                }
-//                else {
-//                    let heroesSet = Set(result.results)
-//                    self.connectedHeroes.append(contentsOf:  heroesSet.subtracting(self.connectedHeroes))
-//                    self.currentOffset += offset!
-//                    self.totalHeroes = result.data.total
-//                }
-//
-//            case .error(let error):
-//                print(error)
-//            }
         
     }
     

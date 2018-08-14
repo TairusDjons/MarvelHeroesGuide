@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-extension Item {
+extension Summary {
     init?(json: JSON){
         self.name = json["name"].stringValue
         self.resourceURI = json["resourceURI"].stringValue

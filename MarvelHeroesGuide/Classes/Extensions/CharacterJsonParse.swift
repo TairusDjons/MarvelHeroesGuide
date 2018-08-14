@@ -16,7 +16,7 @@ extension Character {
         self.description = json["description"].stringValue
         self.thumbnail = Thumbnail(json: json["thumbnail"])!
         self.resourceURI = json["resourceURI"].stringValue
-        self.events = CollectionModel(json: json["events"])!
+        self.events = ListModel(json: json["events"])!
         var tempUrls = [UrlType]()
         for (_, subJson) in json["urls"] {
             tempUrls.append(UrlType(json: subJson)!)

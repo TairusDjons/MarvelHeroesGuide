@@ -13,7 +13,7 @@ protocol CharacterServiceProtocol {
                        name: String?,
                        offset: Int?,
                        limit: Int?,
-                       OnCompletion: @escaping (Result<DataObject<Character>, Error>)->())
+                       OnCompletion: @escaping (Result<DataModel<Character>, Error>)->())
     
     func getTotalCharCount(OnCompletion: @escaping (Result<Int, Error>)->())
     
@@ -21,12 +21,12 @@ protocol CharacterServiceProtocol {
     func getCharactersBy(event uri: String,
                          offset: Int?,
                          limit: Int?,
-                         OnCompletion: @escaping (Result<DataObject<Character>, Error>)->())
+                         OnCompletion: @escaping (Result<DataModel<Character>, Error>)->())
     
     
     func getAllConnectedCharactersTo(character: Character,
                                   offset: Int?,
                                   limit: Int?,
-                                  OnCompletion: @escaping (Result<DataObject<Character>, Error>)->())
+                                  OnCompletion: @escaping (Result<DataModel<Character>, Error>)->())
 }
 

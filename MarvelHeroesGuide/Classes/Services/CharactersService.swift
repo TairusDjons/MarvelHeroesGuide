@@ -20,14 +20,14 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
     func getCharactersBy(event uri: String,
                         offset: Int? = 0,
                         limit: Int? = 20,
-                        OnCompletion: @escaping (Result<DataObject<Character>, Error>) -> ()) {
+                        OnCompletion: @escaping (Result<DataModel<Character>, Error>) -> ()) {
         //Get full info about event
         makeRequest(url: uri, method: .get, encoding: URLEncoding.default) {
             result in switch result {
             case .success(let result):
                 let json = JSON(result)
                 //We get only one event here, that's why we use results.first
-                guard let data = DataObject<Event>(json: json["data"]),
+                guard let data = DataModel<Event>(json: json["data"]),
                       let event = data.results.first
                     else {return}
                 
@@ -50,7 +50,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
     func getAllConnectedCharactersTo(character: Character,
                                   offset: Int? = 0,
                                   limit: Int? = 20,
-                                  OnCompletion: @escaping (Result<DataObject<Character>, Error>) -> ()) {
+                                  OnCompletion: @escaping (Result<DataModel<Character>, Error>) -> ()) {
         let api = character.events.collectionURI
         
         let params: [String: Any] = [
@@ -64,7 +64,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                 var dictionary = Dictionary<Character, Int>()
                 var characters = [Character]()
                 
-                let eventData = DataObject<Event>(json: json)
+                let eventData = DataModel<Event>(json: json)
                 
                 guard let events = eventData?.results
                     else {
@@ -72,7 +72,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                 }
                 
                 if events.isEmpty {
-                    OnCompletion(.success(DataObject<Character>()))
+                    OnCompletion(.success(DataModel<Character>()))
                     return
                 }
                 for event in events {
@@ -89,7 +89,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                         }
                         if (counter == events.count) {
                             characters.append(contentsOf: dictionary.keys)
-                            let dataObject = DataObject<Character>(offset: 0,
+                            let dataObject = DataModel<Character>(offset: 0,
                                                                    limit: 0,
                                                                    total: characters.count,
                                                                    count: 0,
@@ -130,7 +130,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
                         name: String? = nil,
                         offset: Int? = 0,
                         limit: Int? = 20,
-                        OnCompletion: @escaping (Result<DataObject<Character>, Error>)->()) {
+                        OnCompletion: @escaping (Result<DataModel<Character>, Error>)->()) {
 
         let url: String
         if uri != nil {url = uri!}
@@ -151,7 +151,7 @@ class CharacterService: MarvelBaseService, CharacterServiceProtocol {
             switch result {
             case .success(let value):
                 let json = JSON(value)
-                let data = DataObject<Character>(json: json["data"])!
+                let data = DataModel<Character>(json: json["data"])!
                 OnCompletion(.success(data))
             case .error(let error):
                 OnCompletion(.error(error))

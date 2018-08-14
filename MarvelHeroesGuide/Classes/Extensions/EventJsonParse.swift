@@ -16,7 +16,7 @@ extension Event {
         self.thumbnail = Thumbnail(json: json["thumbnail"])!
         self.name = json["title"].stringValue
         self.resourceURI = json["resourceURI"].stringValue
-        self.characters = CollectionModel(json: json["characters"])!
+        self.characters = ListModel(json: json["characters"])!
         var tempUrls = [UrlType]()
         for (_, subJson) in json["urls"] {
             tempUrls.append(UrlType(json: subJson)!)

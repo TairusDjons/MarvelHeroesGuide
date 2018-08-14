@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-extension CollectionModel {
+extension ListModel {
     init?(json: JSON) {
         self.available = json["available"].intValue
         self.collectionURI = json["collectionURI"].stringValue

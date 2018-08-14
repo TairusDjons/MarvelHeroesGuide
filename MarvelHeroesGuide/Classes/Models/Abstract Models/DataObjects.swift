@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DataObject<T: MarvelBaseObject> {
+struct DataModel<T: MarvelBaseObject> {
     let offset: Int
     let limit: Int
     let total: Int

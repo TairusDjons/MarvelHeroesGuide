@@ -24,6 +24,8 @@ class HeroesCollectionViewController: UIViewController, FilterDelegate{
             }
         }
     }
+    
+    private var offsetDelta = 20
     private var totalHeroes: Int
     private var characterService: CharacterServiceProtocol
     private var currentOffset: Int = 0
@@ -98,6 +100,7 @@ class HeroesCollectionViewController: UIViewController, FilterDelegate{
                 return
         }
         updateCharacters(name: searchName)
+        self.currentOffset = 0
     }
     
     override func didReceiveMemoryWarning() {
@@ -122,7 +125,6 @@ class HeroesCollectionViewController: UIViewController, FilterDelegate{
                            limit: Int? = 20) {
         request(uri: uri, name: name, offset: offset, limit: limit) {
             result in self.heroesList = result
-            self.currentOffset = 0
         }
     }
     
@@ -169,7 +171,8 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
         
         if (heroesList.count >= totalHeroes) { return }
         if (indexPath.item == heroesList.count-1 && currentOffset < totalHeroes && !isLoading) {
-            getCharacters(name: searchName, offset: currentOffset + 50)
+            getCharacters(name: searchName, offset: currentOffset + offsetDelta, limit: offsetDelta)
+            currentOffset += 20
         }
     }
     
@@ -189,7 +192,6 @@ extension HeroesCollectionViewController: UICollectionViewDelegate, UICollection
             switch result {
             case .success(let result):
                 action(result.results)
-                self.currentOffset = offset!
                 self.totalHeroes = result.total
             case .error(let error):
                 print(error)

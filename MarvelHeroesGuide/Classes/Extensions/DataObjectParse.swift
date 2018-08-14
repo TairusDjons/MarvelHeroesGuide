@@ -9,7 +9,7 @@
 import Foundation
 import SwiftyJSON
 
-extension DataObject {
+extension DataModel {
     init?(json:JSON) {
         self.count = json["count"].intValue
         self.limit = json["limit"].intValue

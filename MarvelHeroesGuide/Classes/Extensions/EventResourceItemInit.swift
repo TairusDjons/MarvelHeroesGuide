@@ -15,7 +15,7 @@ extension Event {
          _ thumbnail: Thumbnail? = nil,
          _ resourceURI: String? = nil,
          _ urls: [UrlType]? = nil,
-         _ characters: CollectionModel<Character>? = nil) {
+         _ characters: ListModel<Character>? = nil) {
         self.name = name
         self.id = id
         self.description = description

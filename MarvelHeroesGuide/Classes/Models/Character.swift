@@ -15,7 +15,7 @@ struct Character: MarvelBaseObject, Hashable{
     let description: String
     let thumbnail: Thumbnail
     let resourceURI: String
-    let events: CollectionModel<Event>
+    let events: ListModel<Summary>
     let urls: [UrlType]
     var hashValue: Int {
         return id.hashValue

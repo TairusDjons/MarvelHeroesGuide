@@ -154,11 +154,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.137436"
+            timestampString = "555192513.2348419"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166">
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -232,11 +234,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.139251"
+            timestampString = "555192513.23508"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167">
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -246,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.14125"
+            timestampString = "555192513.235214"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -262,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.141844"
+            timestampString = "555192513.235865"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "collectionView(_:willDisplay:forItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -278,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.141911"
+            timestampString = "555192513.236289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "collectionView(_:willDisplay:forItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -310,7 +314,39 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.142133"
+            timestampString = "555192513.236586"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "request(uri:name:offset:limit:action:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
+            timestampString = "555192513.236881"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "request(uri:name:offset:limit:action:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
+            timestampString = "555192513.2372251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "197"
@@ -322,15 +358,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.142338"
+            timestampString = "555192513.237542"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
             landmarkName = "request(uri:name:offset:limit:action:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -342,23 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.142527"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
-            landmarkName = "request(uri:name:offset:limit:action:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.142789"
+            timestampString = "555192513.237861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "198"
@@ -370,27 +390,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.14299"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "request(uri:name:offset:limit:action:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroDescription/HeroDescriptionController.swift"
-            timestampString = "555187810.143038"
+            timestampString = "555192513.2382081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -406,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroDescription/HeroDescriptionController.swift"
-            timestampString = "555187810.143232"
+            timestampString = "555192513.238286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -438,13 +442,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.143471"
+            timestampString = "555192513.238398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -454,13 +458,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.145077"
+            timestampString = "555192513.2385041"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -470,13 +474,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.146885"
+            timestampString = "555192513.238591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -486,13 +490,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.148855"
+            timestampString = "555192513.2386791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -502,11 +506,11 @@
                   moduleName = "MarvelHeroesGuide"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tairusdjons/Desktop/MarvelHeroesGuide/MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-                  timestampString = "555187810.761863"
+                  timestampString = "555192513.918597"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
                   offsetFromSymbolStart = "529">
                </Location>
                <Location
@@ -517,11 +521,11 @@
                   moduleName = "MarvelHeroesGuide"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tairusdjons/Desktop/MarvelHeroesGuide/MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-                  timestampString = "555187810.773698"
+                  timestampString = "555192513.929153"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
                   offsetFromSymbolStart = "108">
                </Location>
             </Locations>
@@ -534,13 +538,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.15013"
+            timestampString = "555192513.238722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -566,13 +570,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.1519099"
+            timestampString = "555192513.238912"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -582,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroDescription/HeroDescriptionController.swift"
-            timestampString = "555187810.153809"
+            timestampString = "555192513.23904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -614,11 +618,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.154102"
+            timestampString = "555192513.239143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "barButtonAction()"
             landmarkType = "7">
          </BreakpointContent>
@@ -630,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroCollection/HeroesCollectionViewController.swift"
-            timestampString = "555187810.154313"
+            timestampString = "555192513.239498"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -646,13 +650,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/TableObjectView/FilterViewController.swift"
-            timestampString = "555187810.154508"
+            timestampString = "555192513.239845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -662,13 +666,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.155499"
+            timestampString = "555192513.240355"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -678,11 +682,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.157696"
+            timestampString = "555192513.240501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170">
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -692,11 +698,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.1596169"
+            timestampString = "555192513.240581"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169">
+            startingLineNumber = "154"
+            endingLineNumber = "154"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -706,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroDescription/HeroDescriptionController.swift"
-            timestampString = "555187810.16163"
+            timestampString = "555192513.2406861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "collectionView(_:willDisplay:forItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -721,14 +729,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MarvelHeroesGuide/Controllers/HeroDescription/HeroDescriptionController.swift"
-            timestampString = "555187810.161839"
+            filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
+            timestampString = "555192513.240814"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "getConnectedCharacters(character:offset:eventCounter:limit:)"
-            landmarkType = "7">
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -738,29 +746,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.162038"
+            timestampString = "555192513.241024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.163165"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "getCharactersBy(event:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "unknown"
+            landmarkType = "0">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
@@ -770,11 +762,11 @@
                   moduleName = "MarvelHeroesGuide"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tairusdjons/Desktop/MarvelHeroesGuide/MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-                  timestampString = "555187811.050493"
+                  timestampString = "555192514.2202539"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "40"
-                  endingLineNumber = "40"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
                   offsetFromSymbolStart = "77">
                </Location>
                <Location
@@ -785,11 +777,11 @@
                   moduleName = "MarvelHeroesGuide"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/tairusdjons/Desktop/MarvelHeroesGuide/MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-                  timestampString = "555187811.061915"
+                  timestampString = "555192514.234666"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
                   offsetFromSymbolStart = "111">
                </Location>
             </Locations>
@@ -802,13 +794,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.165965"
+            timestampString = "555192513.241205"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "getCharactersBy(event:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -818,13 +810,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.167722"
+            timestampString = "555192513.241275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -834,13 +826,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Services/CharactersService.swift"
-            timestampString = "555187810.169789"
+            timestampString = "555192513.241389"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "getAllConnectedCharactersTo(character:offset:limit:OnCompletion:)"
-            landmarkType = "7">
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -850,11 +842,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Controllers/HeroDescription/HeroDescriptionController.swift"
-            timestampString = "555187810.173591"
+            timestampString = "555192513.241472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "collectionView(_:willDisplay:forItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -866,7 +858,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarvelHeroesGuide/Classes/Extensions/DataObjectParse.swift"
-            timestampString = "555188124.257367"
+            timestampString = "555192513.241578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
